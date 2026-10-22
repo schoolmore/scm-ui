@@ -1,0 +1,23 @@
+.button {
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.button.primary {
+    background: var(--scm-ui-primary);
+    color : var(--scm-ui-fg-secondary);
+}
+.button.secondary {
+    background: var(--scm-ui-secondary);
+    color : var(--scm-ui-primary);
+}
+.button.outline {
+    background: var(--scm-ui-bg-background);
+    color: var(--scm-ui-primary);
+    border: 2px solid var(--scm-ui-primary);
+}
+.button.ghost {
+    background: var(--scm-ui-bg-background);
+    color: var(--scm-ui-primary);
+}

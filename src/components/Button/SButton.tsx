@@ -1,12 +1,15 @@
-interface ISButton {
+import styles from "./SButton.module.css";
+
+export interface ISButton {
     variant : "primary" | "secondary" | "outline" | "ghost",
-    text    : string
+    text    : string,
+    size    : "xs" | "sm" | "md" | "lg"
 }
 
-const SButton = ( {variant, text}: ISButton ) => {
+const SButton = ( {variant, text, size}: ISButton ) => {
 
     return (
-        <button>{text} + {variant}</button>
+        <button className={`${styles.button} ${styles[variant]} ${styles[size]}`}>{text} - {variant}</button>
     );
 
 }

@@ -1,15 +1,34 @@
+/* Police Outfit (variable, 100..900) embarquée dans la lib : aucun appel à Google Fonts */
+@import "@fontsource-variable/outfit/wght.css";
 /* Design tokens partagés par tous les composants (inclus dans dist/styles.css) */
 :root {
-  --scm-font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --scm-font-family: "Outfit Variable", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
-  --scm-color-primary: #2563eb;
-  --scm-color-primary-contrast: #ffffff;
-  --scm-color-text: #111827;
-  --scm-color-border: #d1d5db;
+  --scm-ui-primary              : #C11818;    /* Couleur primaire */
+  --scm-ui-primary-disabled     : #CACACA;    /* Couleur primaire désactivée */
+  --scm-ui-primary-active       : #D22E2E;    /* Couleur primaire accentuée */
+  --scm-ui-secondary            : #FFBABA;    /* Couleur secondaire */
+  --scm-ui-secondary-disabled   : #E6E6E6;    /* Couleur secondaire désactivée */
+  --scm-ui-secondary-active     : #FFDADA;    /* Couleur secondaire accentuée */
 
-  --scm-radius: 6px;
-  --scm-space-1: 4px;
-  --scm-space-2: 8px;
-  --scm-space-3: 12px;
-  --scm-space-4: 16px;
+  --scm-ui-fg-primary           : #000000;    /* Couleur foreground primaire */
+  --scm-ui-fg-secondary         : #FFFFFF;    /* Couleur foreground secondaire */
+  --scm-ui-fg-muted             : #8F8F8F;    /* Couleur foreground muted */
+  --scm-ui-fg-placeholder       : #939393;    /* Couleur foreground pour les placeholder */
+
+  --scm-ui-bg-sidebar           : #FFBFBF;    /* Couleur background pour la nav bar */
+  --scm-ui-bg-background        : #FFFFFF;    /* Couleur background primaire */
+  --scm-ui-bg-muted             : #EEEEEE;    /* Couleur background muted */
+  --scm-ui-bg-muted-bis         : #D6D6D6;    /* Couleur background muted deux */
+  --scm-ui-bg-ghost-active      : #C1181810;  /* Couleur background d'un ghost actif */
+  --scm-ui-bg-muted-active      : #EEEEEE1E;  /* Couleur background muted actif */
+
+  --scm-ui-accent-red           : #EE0000;    /* Accentuation rouge */
+  --scm-ui-accent-green         : #2BDE28;    /* Accentuation verte */
+  --scm-ui-accent-orange        : #FF9D43;    /* Accentuation orange */
+  --scm-ui-accent-blue          : #3290FF;    /* Accentuation bleue */
+  --scm-ui-accent-red-muted     : #B21B1B;    /* Accentuation rouge muted */
+  --scm-ui-accent-blue-muted    : #2879D9;    /* Accentuation bleue muted */
+  --scm-ui-accent-orange-muted  : #D9873B;    /* Accentuation orange muted */
+  --scm-ui-accent-green-muted   : #24BE22;    /* Accentuation verte muted */
 }
