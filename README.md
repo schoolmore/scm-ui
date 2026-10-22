@@ -1,78 +1,61 @@
-# React + TypeScript + Vite
+# @schoolmore/scm-ui
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Librairie de composants React (React 19) de Schoolmore, publiée sur le registre interne Verdaccio `https://npm.int.schoolmore.fr/`.
 
-Currently, two official plugins are available:
+## Utilisation dans un projet
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. Ajouter dans le `.npmrc` du projet :
 
-## React Compiler
+   ```
+   @schoolmore:registry=https://npm.int.schoolmore.fr/
+   ```
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+2. Installer :
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+   ```sh
+   npm i @schoolmore/scm-ui
+   ```
 
-## Expanding the ESLint configuration
+3. Importer les styles une seule fois (ex. dans `main.tsx`), puis les composants :
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+   ```tsx
+   import "@schoolmore/scm-ui/styles.css";
+   import { SButton } from "@schoolmore/scm-ui";
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+`react` et `react-dom` (>= 19) sont des `peerDependencies` : ils sont fournis par le projet consommateur.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Développement
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```sh
+npm run dev          # Storybook sur http://localhost:6006
+npm run typecheck    # vérification TypeScript
+npm run lint
+npm run build        # génère dist/ (index.js, styles.css, .d.ts)
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Structure
 
 ```
+src/
+  index.ts                 API publique : exporter chaque composant ici
+  main.ts                  entrée du bundle Vite (styles globaux + index.ts)
+  styles/tokens.css        design tokens (variables CSS --scm-*)
+  components/<Nom>/
+    S<Nom>.tsx
+    S<Nom>.module.css      styles du composant (CSS Modules)
+    S<Nom>.stories.tsx
+```
+
+Un nouveau composant n'est publié que s'il est exporté depuis `src/index.ts`.
+
+## Publication
+
+Prérequis : être authentifié sur le registre (`npm login --registry https://npm.int.schoolmore.fr/`, token stocké dans `~/.npmrc`).
+
+```sh
+npm version patch    # ou minor / major
+npm publish          # lance typecheck + lint + build via prepublishOnly
+```
+
+Le `publishConfig` du `package.json` force la publication sur Verdaccio, jamais sur npmjs.

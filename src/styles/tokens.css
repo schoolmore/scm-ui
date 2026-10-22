@@ -1,0 +1,15 @@
+/* Design tokens partagés par tous les composants (inclus dans dist/styles.css) */
+:root {
+  --scm-font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --scm-color-primary: #2563eb;
+  --scm-color-primary-contrast: #ffffff;
+  --scm-color-text: #111827;
+  --scm-color-border: #d1d5db;
+
+  --scm-radius: 6px;
+  --scm-space-1: 4px;
+  --scm-space-2: 8px;
+  --scm-space-3: 12px;
+  --scm-space-4: 16px;
+}

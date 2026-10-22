@@ -8,4 +8,12 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+  build : {
+    lib : { entry : "src/main.ts", formats : ["es"], fileName: "index", cssFileName : "styles"},
+    // React doit rester fourni par le projet consommateur (peerDependency), y compris
+    // react/jsx-runtime et react/compiler-runtime injecté par le React Compiler.
+    rolldownOptions : { external : [/^react(-dom)?($|\/)/]},
+    copyPublicDir : false,
+    sourcemap : true
+  }
 })
