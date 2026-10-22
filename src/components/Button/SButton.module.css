@@ -3,21 +3,110 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    transition: background-color .4s, color .4s;
+    font-family: var(--scm-font-family), sans-serif;
+    font-weight: var(--scm-ui-font-weight-medium);
 }
+.button.disabled
+{
+    cursor: default;
+}
+
 .button.primary {
     background: var(--scm-ui-primary);
     color : var(--scm-ui-fg-secondary);
 }
+.button.primary:not(.disabled):hover
+{
+    background: var(--scm-ui-primary-active);
+}
+.button.primary.disabled
+{
+    background: var(--scm-ui-primary-disabled);
+}
 .button.secondary {
     background: var(--scm-ui-secondary);
     color : var(--scm-ui-primary);
+}
+.button.secondary:not(.disabled):hover
+{
+    background: var(--scm-ui-secondary-active);
+    color: var(--scm-ui-primary-active);
+}
+.button.secondary.disabled
+{
+    background: var(--scm-ui-secondary-disabled);
+    color: var(--scm-ui-fg-muted);
 }
 .button.outline {
     background: var(--scm-ui-bg-background);
     color: var(--scm-ui-primary);
     border: 2px solid var(--scm-ui-primary);
 }
+.button.outline:not(.disabled):hover
+{
+    background: var(--scm-ui-bg-ghost-active);
+}
+.button.outline.disabled
+{
+    color: var(--scm-ui-fg-muted);
+    border-color: var(--scm-ui-fg-muted);
+}
 .button.ghost {
     background: var(--scm-ui-bg-background);
     color: var(--scm-ui-primary);
+}
+.button.ghost:not(.disabled):hover
+{
+    background: var(--scm-ui-bg-ghost-active);
+}
+.button.ghost.disabled
+{
+    color: var(--scm-ui-fg-muted);
+}
+
+
+.button.lg
+{
+    gap: var(--scm-ui-spacing-3-5);
+    padding: var(--scm-ui-spacing-3) var(--scm-ui-spacing-6);
+    border-radius: var(--scm-ui-border-md);
+    font-size: var(--scm-ui-font-size-lg);
+}
+.button.lg span
+{
+    font-size: var(--scm-ui-font-size-xl);
+}
+.button.md
+{
+    gap: var(--scm-ui-spacing-3);
+    padding: var(--scm-ui-spacing-2-5) var(--scm-ui-spacing-5);
+    border-radius: var(--scm-ui-border-md);
+    font-size: var(--scm-ui-font-size-base);
+}
+.button.md span
+{
+    font-size: var(--scm-ui-font-size-lg);
+}
+.button.sm
+{
+    gap: var(--scm-ui-spacing-2);
+    padding: var(--scm-ui-spacing-2) var(--scm-ui-spacing-4);
+    border-radius: var(--scm-ui-border-sm);
+    font-size: var(--scm-ui-font-size-sm);
+}
+.button.sm span
+{
+    font-size: var(--scm-ui-font-size-base);
+}
+.button.xs
+{
+    gap: var(--scm-ui-spacing-1);
+    padding: var(--scm-ui-spacing-1) var(--scm-ui-spacing-2);
+    border-radius: var(--scm-ui-border-sm);
+    font-size: var(--scm-ui-font-size-xs);
+}
+.button.xs span
+{
+    font-size: var(--scm-ui-font-size-sm);
 }

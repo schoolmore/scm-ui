@@ -31,4 +31,62 @@
   --scm-ui-accent-blue-muted    : #2879D9;    /* Accentuation bleue muted */
   --scm-ui-accent-orange-muted  : #D9873B;    /* Accentuation orange muted */
   --scm-ui-accent-green-muted   : #24BE22;    /* Accentuation verte muted */
+
+  --scm-ui-border-xs            : 2px;
+  --scm-ui-border-sm            : 4px;
+  --scm-ui-border-md            : 6px;
+  --scm-ui-border-lg            : 8px;
+
+  --scm-ui-spacing-0            : 0;
+  --scm-ui-spacing-0-5          : 0.125em;
+  --scm-ui-spacing-1            : 0.25em;
+  --scm-ui-spacing-1-5          : 0.375em;
+  --scm-ui-spacing-2            : 0.5em;
+  --scm-ui-spacing-2-5          : 0.625em;
+  --scm-ui-spacing-3            : 0.75em;
+  --scm-ui-spacing-3-5          : 0.875em;
+  --scm-ui-spacing-4            : 1em;
+  --scm-ui-spacing-5            : 1.25em;
+  --scm-ui-spacing-6            : 1.5em;
+  --scm-ui-spacing-7            : 1.75em;
+  --scm-ui-spacing-8            : 2em;
+  --scm-ui-spacing-9            : 2.25em;
+  --scm-ui-spacing-10           : 2.5em;
+  --scm-ui-spacing-11           : 2.75em;
+  --scm-ui-spacing-12           : 3em;
+  --scm-ui-spacing-14           : 3.5em;
+  --scm-ui-spacing-16           : 4em;
+  --scm-ui-spacing-20           : 5em;
+  --scm-ui-spacing-24           : 6em;
+  --scm-ui-spacing-28           : 7em;
+  --scm-ui-spacing-32           : 8em;
+  --scm-ui-spacing-36           : 9em;
+  --scm-ui-spacing-40           : 10em;
+  --scm-ui-spacing-44           : 11em;
+  --scm-ui-spacing-48           : 12em;
+  --scm-ui-spacing-52           : 13em;
+  --scm-ui-spacing-56           : 14em;
+  --scm-ui-spacing-60           : 15em;
+  --scm-ui-spacing-64           : 16em;
+  --scm-ui-spacing-72           : 18em;
+  --scm-ui-spacing-80           : 20em;
+  --scm-ui-spacing-96           : 24em;
+
+  --scm-ui-font-size-xs         : 0.75em;
+  --scm-ui-font-size-sm         : 0.875em;
+  --scm-ui-font-size-base       : 1em;
+  --scm-ui-font-size-lg         : 1.125em;
+  --scm-ui-font-size-xl         : 1.25em;
+  --scm-ui-font-size-2xl        : 1.5em;
+  --scm-ui-font-size-3xl        : 1.875em;
+  --scm-ui-font-size-4xl        : 2.25em;
+
+  --scm-ui-font-weight-extralight : 200;
+  --scm-ui-font-weight-light    : 300;
+  --scm-ui-font-weight-normal   : 400;
+  --scm-ui-font-weight-medium   : 500;
+  --scm-ui-font-weight-semibold : 600;
+  --scm-ui-font-weight-bold     : 700;
+  --scm-ui-font-weight-extrabold : 800;
+  --scm-ui-font-weight-black    : 900;
 }
