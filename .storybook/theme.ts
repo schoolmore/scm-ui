@@ -4,14 +4,14 @@ export default create({
     base: 'light',
 
     // Marque
-    brandTitle: 'Schoolmore UI',       // nom affiché (sert aussi pour le titre de l'onglet)
-    brandUrl: 'https://www.schoolmore.fr', // lien au clic sur le logo
-    brandImage: 'public/icon.svg',           // ton logo à la place de celui de Storybook
+    brandTitle: 'Schoolmore UI',
+    brandUrl: 'https://www.schoolmore.fr',
+    brandImage: './icon.svg',
     brandTarget: '_self',
 
     // Couleurs
     colorPrimary: '#C11818',
-    colorSecondary: '#C11818',         // CTA, élément sélectionné, onglets actifs
+    colorSecondary: '#C11818',
 
     // UI
     appBg: '#FFF5F5',
@@ -31,7 +31,7 @@ export default create({
     barBg: '#FFFFFF',
 
     // Champs (panneau Controls)
-    inputBg: '#FFFFFF',
+    inputBg: '#EEEEEE',
     inputBorder: '#D6D6D6',
     inputTextColor: '#000000',
     inputBorderRadius: 4,

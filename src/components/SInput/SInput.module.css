@@ -1,0 +1,55 @@
+.inputPrt
+{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: var(--scm-ui-spacing-2) 0;
+}
+.inputPrt .icon
+{
+    position: absolute;
+    left: var(--scm-ui-spacing-3);
+    display: flex;
+    align-items: center;
+}
+.inputPrt input
+{
+    background-color: var(--scm-ui-bg-muted);
+    color: var(--scm-ui-fg-primary);
+    border: none;
+    border-bottom: 2px solid var(--scm-ui-fg-muted);
+    font-size: var(--scm-ui-font-size-sm);
+    font-weight: var(--scm-ui-font-weight-normal);
+    padding: var(--scm-ui-spacing-3-5);
+    padding-left: var(--scm-ui-spacing-12);
+    outline: none;
+    width: 100%;
+    border-radius: var(--scm-ui-border-sm);
+}
+.inputPrt.sm input
+{
+    font-size: var(--scm-ui-font-size-xs);
+    padding-left: var(--scm-ui-spacing-14);
+}
+.inputPrt.lg input
+{
+    font-size: var(--scm-ui-font-size-base);
+}
+.inputPrt input::placeholder
+{
+    color: var(--scm-ui-fg-placeholder);
+}
+.inputPrt.disabled input
+{
+    background-color: var(--scm-ui-primary-disabled);
+    color: var(--scm-ui-fg-placeholder);
+}
+.inputPrt.error input
+{
+    color: var(--scm-ui-accent-red-muted);
+    border-color: var(--scm-ui-accent-red-muted);
+}
+.inputPrt.error span
+{
+    color: var(--scm-ui-accent-red-muted) !important;
+}
