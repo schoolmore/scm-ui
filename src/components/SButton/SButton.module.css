@@ -73,10 +73,10 @@
     border-radius: var(--scm-ui-border-md);
     font-size: var(--scm-ui-font-size-lg);
 }
-.button.lg span
+/*.button.lg span
 {
     font-size: var(--scm-ui-font-size-xl);
-}
+}*/
 .button.md
 {
     gap: var(--scm-ui-spacing-3);
@@ -84,10 +84,10 @@
     border-radius: var(--scm-ui-border-md);
     font-size: var(--scm-ui-font-size-base);
 }
-.button.md span
+/*.button.md span
 {
     font-size: var(--scm-ui-font-size-lg);
-}
+}*/
 .button.sm
 {
     gap: var(--scm-ui-spacing-2);
@@ -95,10 +95,10 @@
     border-radius: var(--scm-ui-border-sm);
     font-size: var(--scm-ui-font-size-sm);
 }
-.button.sm span
+/*.button.sm span
 {
     font-size: var(--scm-ui-font-size-base);
-}
+}*/
 .button.xs
 {
     gap: var(--scm-ui-spacing-1);
@@ -106,7 +106,8 @@
     border-radius: var(--scm-ui-border-sm);
     font-size: var(--scm-ui-font-size-xs);
 }
+/*
 .button.xs span
 {
     font-size: var(--scm-ui-font-size-sm);
-}
+}*/

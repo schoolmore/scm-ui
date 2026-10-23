@@ -8,7 +8,7 @@ const meta = {
     title     : "Components/SButton",
     component : SButton,
     tags      : ["autodocs"],
-    args      : { text : "Bouton", size: "md", disabled : false, onClick : action("onClick") },
+    args      : { text : "Bouton", size: "md", disabled : false, onClick : e => action("onClick")(e) },
     argTypes  : {
         frontIcon   : {type: "string"},
         backIcon    : {type: "string"},

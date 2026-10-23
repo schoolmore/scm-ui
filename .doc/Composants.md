@@ -87,7 +87,7 @@ Rien d'autre à faire pour Storybook : il trouve automatiquement tous les fichie
 > ⚠️ **Un composant absent de `src/index.ts` n'est pas publié dans la lib npm**, même s'il fonctionne dans Storybook.
 
 ```ts
-export { default as SButton } from "./components/Button/SButton";
+export { default as SButton } from "./components/SButton/SButton";
 export { default as SCard } from "./components/Card/SCard";
 export type { ISCard } from "./components/Card/SCard";
 ```

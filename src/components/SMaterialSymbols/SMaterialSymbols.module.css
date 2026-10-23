@@ -1,0 +1,64 @@
+.iconPrt
+{
+    font-size: var(--scm-ui-font-size-2xl);
+}
+.icon
+{
+    user-select: none;
+}
+.icon.default
+{
+    font-size: var(--scm-ui-font-size-lg);
+}
+.icon.xxl
+{
+    font-size: var(--scm-ui-font-size-4xl);
+}
+.icon.xl
+{
+    font-size: var(--scm-ui-font-size-3xl);
+}
+.icon.lg
+{
+    font-size: var(--scm-ui-font-size-2xl);
+}
+.icon.sm
+{
+    font-size: var(--scm-ui-font-size-lg);
+}
+.icon.xs
+{
+    font-size: var(--scm-ui-font-size-base);
+}
+.icon.fill
+{
+    font-variation-settings: 'FILL' 1;
+}
+.icon.extrabold
+{
+    font-weight: 700;
+}
+.icon.bold
+{
+    font-weight: 600;
+}
+.icon.semibold
+{
+    font-weight: 500;
+}
+.icon.medium
+{
+    font-weight: 400;
+}
+.icon.normal
+{
+    font-weight: 300;
+}
+.icon.light
+{
+    font-weight: 200;
+}
+.icon.thin
+{
+    font-weight: 100;
+}

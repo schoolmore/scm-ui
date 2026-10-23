@@ -28,7 +28,7 @@ export interface ISButton {
 const SButton = ( {variant, text, size = "md", disabled = false,onClick,frontIcon,backIcon}: ISButton ) => {
 
     return (
-        <button onClick={onClick} disabled={disabled} className={`${styles.button} ${disabled?styles.disabled:""} ${styles[variant]} ${styles[size]}`}>
+        <button aria-label={text} onClick={onClick} disabled={disabled} className={`${styles.button} ${disabled?styles.disabled:""} ${styles[variant]} ${styles[size]}`}>
             {frontIcon&&<span className="material-symbols-rounded">{frontIcon}</span>}
             {text}
             {backIcon&&<span className="material-symbols-rounded">{backIcon}</span>}

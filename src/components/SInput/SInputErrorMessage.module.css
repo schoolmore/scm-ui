@@ -1,0 +1,17 @@
+.message
+{
+    color: var(--scm-ui-accent-red-muted);
+    font-size: var(--scm-ui-font-size-sm);
+    display: flex;
+    align-items: center;
+    width: auto;
+    margin: var(--scm-ui-spacing-2);
+}
+.message span
+{
+    color: var(--scm-ui-accent-red-muted) !important;
+}
+.message p
+{
+    margin: 0 var(--scm-ui-spacing-2);
+}
