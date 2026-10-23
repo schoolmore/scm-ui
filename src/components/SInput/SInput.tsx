@@ -8,7 +8,7 @@ import { useId, useState } from "react";
 /** Taille disponible pour l'input */
 export type T_SInputSize = "lg" | "default" | "sm";
 
-interface ISInput {
+export interface ISInput {
     /** Label affiché au dessus de l'input */
     label?          : string,
     /** Placeholder affiché derrière l'input */

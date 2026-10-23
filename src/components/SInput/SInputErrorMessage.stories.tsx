@@ -22,4 +22,8 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const InputErrorMessage : Story = {}
+export const InputErrorMessage : Story = {
+    args : {
+        idMsg : "yes"
+    }
+}

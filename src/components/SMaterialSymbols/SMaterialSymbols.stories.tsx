@@ -10,6 +10,14 @@ const meta = {
     args        : {
         size : "xl", weight: "normal", icon : "home"
     },
+    parameters : {
+        docs : {
+            description : {
+                component : "Composant permettant de gérer les différents états d'une icône. Utilisation de la " +
+                    "bibliothèque de Google, Material Symbols"
+            }
+        }
+    }
 } satisfies Meta<typeof SMaterialSymbols>;
 
 export default meta;

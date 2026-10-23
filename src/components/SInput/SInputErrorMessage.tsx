@@ -1,7 +1,7 @@
 import styles from "./SInputErrorMessage.module.css";
 import SMaterialSymbols from "../SMaterialSymbols/SMaterialSymbols";
 
-interface ISInputErrorMessage {
+export interface ISInputErrorMessage {
     /** Message affiché sous l'input */
     message : string,
     /** Identifiant du message pour aria-describedby */

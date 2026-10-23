@@ -1,61 +1,53 @@
-# @schoolmore/scm-ui
+# ![Logo ui](./public/icn_ui_mini.png) Bibliothèque de composants Schoolmore UI
+## Scm-ui
 
-Librairie de composants React (React 19) de Schoolmore, publiée sur le registre interne Verdaccio `https://npm.int.schoolmore.fr/`.
+![Scm-ui](https://img.shields.io/badge/School_More-Scm_ui-red)
+![Node_version](https://img.shields.io/node/v/react)
+![Issues](https://img.shields.io/github/issues/schoolmore/scm-ui)
 
-## Utilisation dans un projet
+---
+Bienvenue sur le repository de la bibliothèque de composants React de Schoolmore !
 
-1. Ajouter dans le `.npmrc` du projet :
+![Image couverture](./public/ui.svg)
 
-   ```
-   @schoolmore:registry=https://npm.int.schoolmore.fr/
-   ```
+Cette bibliothèque permet de construire les interfaces des applications Schoolmore. Elle est encore aujourd'hui
+en cours de développement. Attention : l'application scm-app *(gestion)* **n'utilise pas les composants React**.
 
+> [!NOTE]
+> Bibliothèque disponible publiquement
+
+## Storybook
+
+Lien vers le Storybook : [Storybook](https://ui.schoolmore.fr)
+
+## Informations développement
+
+> [!WARNING]
+> Pour un accès interne uniquement. Pour un accès externe, cloner le repository.
+
+### Utilisation dans un projet
+
+1. Ajouter le fichier **.npmrc** à la racine du projet :
+```text
+@schoolmore:registry=https://npm.int.schoolmore.fr/
+```
 2. Installer :
-
-   ```sh
-   npm i @schoolmore/scm-ui
-   ```
-
-3. Importer les styles une seule fois (ex. dans `main.tsx`), puis les composants :
-
-   ```tsx
-   import "@schoolmore/scm-ui/styles.css";
-   import { SButton } from "@schoolmore/scm-ui";
-   ```
-
-`react` et `react-dom` (>= 19) sont des `peerDependencies` : ils sont fournis par le projet consommateur.
-
-## Développement
-
-```sh
-npm run dev          # Storybook sur http://localhost:6006
-npm run typecheck    # vérification TypeScript
-npm run lint
-npm run build        # génère dist/ (index.js, styles.css, .d.ts)
+```shell
+npm i @schoolmore/scm-ui
 ```
 
-### Structure
-
-```
-src/
-  index.ts                 API publique : exporter chaque composant ici
-  main.ts                  entrée du bundle Vite (styles globaux + index.ts)
-  styles/tokens.css        design tokens (variables CSS --scm-*)
-  components/<Nom>/
-    S<Nom>.tsx
-    S<Nom>.module.css      styles du composant (CSS Modules)
-    S<Nom>.stories.tsx
+3. Importer les styles une seule fois *(par exemple dans un `main.ts`)*, puis les composants :
+```typescript
+import "@schoolmore/scm-ui/styles.css";
+import { SButton } from "@schoolmore/scm-ui";
 ```
 
-Un nouveau composant n'est publié que s'il est exporté depuis `src/index.ts`.
+### En développement
 
-## Publication
-
-Prérequis : être authentifié sur le registre (`npm login --registry https://npm.int.schoolmore.fr/`, token stocké dans `~/.npmrc`).
-
-```sh
-npm version patch    # ou minor / major
-npm publish          # lance typecheck + lint + build via prepublishOnly
+```shell
+npm run dev       # Lancer le Storybook
+npm run build     # Construire avant la publication
+npm pack          # Créer une archive pour tester dans un autre projet avant le déploiement
+npm version patch # Modifier la version (ou minor/major)
+npm publish       # Publier sur le registre interne
 ```
-
-Le `publishConfig` du `package.json` force la publication sur Verdaccio, jamais sur npmjs.

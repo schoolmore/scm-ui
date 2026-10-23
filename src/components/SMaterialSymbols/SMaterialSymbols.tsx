@@ -6,7 +6,7 @@ export type T_SMaterialSymbolsSize = "xxl" | "xl" | "lg" | "default" | "sm" | "x
 /** Graisse disponible pour l'icône, entre 700 et 100 */
 export type T_SMaterialSymbolsWeight = "extrabold" | "bold" | "semibold" | "medium" | "normal" | "light" | "thin";
 
-interface ISMaterialSymbols {
+export interface ISMaterialSymbols {
     /** Icône affichée */
     icon    : MaterialSymbol,
     /** Taille d'affichage de l'icône */

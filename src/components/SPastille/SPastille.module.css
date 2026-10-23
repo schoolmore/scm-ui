@@ -1,0 +1,25 @@
+.pastille
+{
+    width: 1.25em;
+    height: 1.25em;
+    background-color: black;
+    border-radius: var(--scm-ui-border-sm);
+}
+.pastille.lg
+{
+    width: 1.75em;
+    height: 1.75em;
+    border-radius: var(--scm-ui-border-md);
+}
+.pastille.sm
+{
+    width: .75em;
+    height: .75em;
+    border-radius: var(--scm-ui-border-xs);
+}
+.pastille.xl
+{
+    width: 2.25em;
+    height: 2.25em;
+    border-radius: var(--scm-ui-border-lg);
+}
