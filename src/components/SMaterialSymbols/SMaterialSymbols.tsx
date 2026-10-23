@@ -25,6 +25,7 @@ const SMaterialSymbols = ( {
 
     return (
         <span
+            aria-hidden="true"
             style={{color}}
             className={`material-symbols-rounded ${styles.icon} ${styles[size]} ${fill?styles.fill:''} ${styles[weight]}`}
         >

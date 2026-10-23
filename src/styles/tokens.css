@@ -32,6 +32,8 @@
   --scm-ui-accent-orange-muted  : #D9873B;    /* Accentuation orange muted */
   --scm-ui-accent-green-muted   : #24BE22;    /* Accentuation verte muted */
 
+  --scm-ui-gradient             : linear-gradient(135deg, #6A0909 0%, #B20909 65.71%, #F00 155.75%); /* Gradient spécial */
+
   --scm-ui-border-xs            : 2px;
   --scm-ui-border-sm            : 4px;
   --scm-ui-border-md            : 6px;
