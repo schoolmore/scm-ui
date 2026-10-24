@@ -1,0 +1,12 @@
+.tabPrt
+{
+    display: flex;
+    align-items: center;
+    width: auto;
+    margin: 0;
+    gap: var(--scm-ui-spacing-2-5);
+    border: 1px solid var(--scm-ui-primary);
+    border-radius: var(--scm-ui-border-lg);
+    overflow: hidden;
+    padding: var(--scm-ui-spacing-2-5);
+}

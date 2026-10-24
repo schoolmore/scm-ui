@@ -1,0 +1,51 @@
+.selector
+{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: fit-content;
+    border-radius: var(--scm-ui-border-sm);
+    overflow: hidden;
+    gap: var(--scm-ui-spacing-2-5);
+    padding: var(--scm-ui-spacing-2) var(--scm-ui-spacing-2-5);
+    user-select: none;
+    -webkit-user-select: none;
+}
+.selector::before
+{
+    content: '';
+    width: 0;
+    height: 100%;
+    background-color: var(--scm-ui-secondary);
+    opacity: .3;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: .4s;
+}
+.selector:not(.disabled):hover::before, .selector:not(.disabled):focus::before
+{
+    width: 100%;
+}
+.selector p
+{
+    margin: 0;
+    font-family: var(--scm-font-family), sans-serif;
+    font-size: var(--scm-ui-font-size-base);
+}
+.disabled
+{
+    cursor: default;
+}
+.disabled p, .disabled span
+{
+    color: var(--scm-ui-fg-placeholder) !important;
+}
+.selector.selected::before
+{
+    width: 100%;
+    opacity: .5;
+}
