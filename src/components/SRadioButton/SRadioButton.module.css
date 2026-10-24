@@ -1,0 +1,9 @@
+.rbParent
+{
+    display: flex;
+    align-items: center;
+    gap: var(--scm-ui-spacing-2);
+    margin: 0;
+    width: fit-content;
+    flex-wrap: wrap;
+}

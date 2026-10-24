@@ -15,3 +15,5 @@ export { default as SAppIcon } from "./components/SAppIcon/SAppIcon";
 export { default as SInfoCard } from "./components/SInfoCard/SInfoCard";
 export { default as SToggleButton } from "./components/SToggleButton/SToggleButton";
 export { default as SToggle } from "./components/SToggle/SToggle";
+export { default as SRadioButtonItem } from "./components/SRadtioButtonItem/SRadioButtonItem";
+export { default as SRadioButton } from "./components/SRadioButton/SRadioButton";
