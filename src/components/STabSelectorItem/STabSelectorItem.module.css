@@ -35,6 +35,9 @@
     margin: 0;
     font-family: var(--scm-font-family), sans-serif;
     font-size: var(--scm-ui-font-size-base);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .disabled
 {
@@ -48,4 +51,17 @@
 {
     width: 100%;
     opacity: .5;
+}
+
+@media screen and (max-width: 350px) {
+    .selector p
+    {
+        display: none;
+    }
+}
+@media screen and (max-width: 420px) {
+    .selector
+    {
+        padding: var(--scm-ui-spacing-1) var(--scm-ui-spacing-1-5);
+    }
 }

@@ -11,6 +11,10 @@
     font-weight: var(--scm-ui-font-weight-medium);
     color: var(--scm-ui-fg-secondary) !important;
 }
+.texte
+{
+    font-family: var(--scm-font-family), sans-serif;
+}
 
 /** VARIANTES **/
 .badge.infos

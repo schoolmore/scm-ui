@@ -32,7 +32,7 @@ const SBadge = ( {
     return (
         <div style={custom} className={`${styles.badge} ${styles[variant]} ${styles[size]}`}>
             {frontIcon&&<SMaterialSymbols icon={frontIcon} size={size} />}
-            <span>{texte}</span>
+            <span className={styles.texte}>{texte}</span>
             {backIcon&&<SMaterialSymbols icon={backIcon} size={size} />}
         </div>
     );
