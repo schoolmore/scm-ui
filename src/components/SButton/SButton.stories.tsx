@@ -35,6 +35,15 @@ export const Ghost     : Story = {
     argTypes : {variant: {control:false}}
 };
 
+export const Action : Story = {
+    args : {
+        variant : "primary", text : "Cliquez",onClick : (e) => {
+            console.log("onClick");
+            action("onClick")(e);
+        }
+    }
+}
+
 const variants  = ["primary", "secondary", "outline", "ghost"] as const;
 const sizes     = ["lg", "md", "sm", "xs"] as const;
 /** Combinaisons d'icônes affichées pour chaque taille dans la story Icons */

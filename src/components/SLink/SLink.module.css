@@ -1,0 +1,36 @@
+.link
+{
+    position: relative;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+    width: fit-content;
+    display: inline-flex;
+}
+.link::after
+{
+    font-family: 'Material Symbols Rounded', sans-serif;
+    content: "\e5cc";
+    color: var(--scm-ui-primary);
+    font-weight: var(--scm-ui-font-weight-medium);
+    transition: .4s;
+}
+.link span
+{
+    font-family: var(--scm-font-family), sans-serif;
+    font-weight: var(--scm-ui-font-weight-bold);
+    transition: color .4s;
+    margin: 0;
+}
+.link.blank::after
+{
+    content: "\e89e";
+}
+.link:hover span
+{
+    color: var(--scm-ui-primary);
+}
+.link:hover:not(.blank)::after
+{
+    transform: translateX(5px);
+}
