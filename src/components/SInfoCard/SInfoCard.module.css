@@ -1,0 +1,64 @@
+.card
+{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    border-left: 4px solid var(--scm-ui-bg-muted);
+    border-radius: var(--scm-ui-border-lg);
+    padding: var(--scm-ui-spacing-3) var(--scm-ui-spacing-3);
+    gap: var(--scm-ui-spacing-1);
+    background: var(--scm-ui-bg-background);
+}
+.card::before
+{
+    content: "Message";
+    font-size: var(--scm-ui-font-size-xs);
+    font-family: var(--scm-font-family), sans-serif;
+    font-weight: var(--scm-ui-font-weight-semibold);
+    color: var(--scm-ui-fg-muted);
+}
+.card p
+{
+    margin: 0;
+    color: var(--scm-ui-fg-primary);
+    font-weight: var(--scm-ui-font-weight-normal);
+    font-family: var(--scm-font-family), sans-serif;
+}
+
+/** Variantes */
+.infos
+{
+    border-color: var(--scm-ui-accent-blue);
+}
+.infos::before
+{
+    content: "Information";
+    color: var(--scm-ui-accent-blue-muted);
+}
+.warning
+{
+    border-color: var(--scm-ui-accent-orange);
+}
+.warning::before
+{
+    content: "Attention";
+    color: var(--scm-ui-accent-orange-muted);
+}
+.danger
+{
+    border-color: var(--scm-ui-accent-red);
+}
+.danger::before
+{
+    content: "Danger";
+    color: var(--scm-ui-accent-red-muted);
+}
+.success
+{
+    border-color: var(--scm-ui-accent-green);
+}
+.success::before
+{
+    content: "Succès";
+    color: var(--scm-ui-accent-green-muted);
+}

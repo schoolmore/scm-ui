@@ -12,3 +12,4 @@ export { default as STabSelector } from "./components/STabSelector/STabSelector"
 export { default as SEmptyState } from "./components/SEmptyState/SEmptyState";
 export { default as SButtonSSO } from "./components/SButtonSSO/SButtonSSO";
 export { default as SAppIcon } from "./components/SAppIcon/SAppIcon";
+export { default as SInfoCard } from "./components/SInfoCard/SInfoCard";
