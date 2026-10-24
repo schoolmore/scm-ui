@@ -1,0 +1,81 @@
+.badge
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    font-size: var(--scm-ui-font-size-base);
+}
+.badge span
+{
+    font-weight: var(--scm-ui-font-weight-medium);
+    color: var(--scm-ui-fg-secondary) !important;
+}
+
+/** VARIANTES **/
+.badge.infos
+{
+    background-color: var(--scm-ui-accent-blue);
+}
+.badge.warning
+{
+    background-color: var(--scm-ui-accent-orange);
+}
+.badge.danger
+{
+    background-color: var(--scm-ui-accent-red);
+}
+.badge.success
+{
+    background-color: var(--scm-ui-accent-green);
+}
+.badge.muted
+{
+    background-color: var(--scm-ui-bg-muted);
+}
+.badge.muted span
+{
+    color: var(--scm-ui-fg-primary) !important;
+}
+
+/** TAILLES **/
+.badge.lg
+{
+    padding: var(--scm-ui-spacing-2) var(--scm-ui-spacing-4);
+    border-radius: var(--scm-ui-border-sm);
+    gap: var(--scm-ui-spacing-2-5);
+}
+.badge.lg span
+{
+    font-size: var(--scm-ui-font-size-lg);
+}
+.badge.default
+{
+    padding: var(--scm-ui-spacing-1) var(--scm-ui-spacing-3);
+    border-radius: var(--scm-ui-border-sm);
+    gap: var(--scm-ui-spacing-2);
+}
+.badge.defaukt span
+{
+    font-size: var(--scm-ui-font-size-base);
+}
+.badge.sm
+{
+    padding: var(--scm-ui-spacing-0-5) var(--scm-ui-spacing-3);
+    border-radius: var(--scm-ui-border-sm);
+    gap: var(--scm-ui-spacing-1-5);
+}
+.badge.sm span
+{
+    font-size: var(--scm-ui-font-size-sm);
+}
+.badge.xs
+{
+    padding: 1px var(--scm-ui-spacing-2);
+    border-radius: var(--scm-ui-border-xs);
+    gap: var(--scm-ui-spacing-1);
+}
+.badge.xs span
+{
+    font-size: var(--scm-ui-font-size-xs);
+}
