@@ -1,0 +1,29 @@
+.button
+{
+    background: var(--scm-ui-gradient);
+    border-radius: var(--scm-ui-border-lg);
+    border: none;
+    cursor: pointer;
+    transition: .4s;
+    padding: var(--scm-ui-spacing-2) var(--scm-ui-spacing-6);
+    display: flex;
+    align-items: center;
+    gap: var(--scm-ui-spacing-3-5);
+}
+.button p
+{
+    font-family: var(--scm-font-family), sans-serif;
+    color: var(--scm-ui-fg-secondary);
+    margin: 0;
+    font-size: var(--scm-ui-font-size-lg);
+    font-weight: var(--scm-ui-font-weight-normal);
+}
+.button:not(.disabled):hover
+{
+    transform: scale(1.05);
+}
+.disabled
+{
+    opacity: .2;
+    cursor: default;
+}
