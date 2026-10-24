@@ -1,0 +1,54 @@
+.tglPrt
+{
+    width: 4em;
+    background: var(--scm-ui-bg-muted);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: var(--scm-ui-spacing-1);
+    border-radius: var(--scm-ui-border-md);
+    cursor: pointer;
+    transition: color .4s;
+}
+.toggle
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--scm-ui-spacing-1);
+    border-radius: var(--scm-ui-border-sm);
+    background: var(--scm-ui-secondary);
+    width: fit-content;
+    transition: .4s;
+}
+.checked
+{
+    background: var(--scm-ui-secondary);
+}
+.checked .toggle
+{
+    background: var(--scm-ui-primary);
+    transform: translateX(100%);
+}
+.checked .toggle span
+{
+    color: var(--scm-ui-fg-secondary) !important;
+}
+.disabled
+{
+    cursor: default;
+}
+.disabled .toggle
+{
+    background: var(--scm-ui-bg-muted-bis);
+}
+.disabled.checked
+{
+    background: var(--scm-ui-secondary-disabled);
+}
+.disabled.checked .toggle
+{
+    background: var(--scm-ui-primary-disabled);
+}
