@@ -1,7 +1,7 @@
 import styles from "./SInput.module.css";
 import type { MaterialSymbol } from "material-symbols";
 import SMaterialSymbols from "../SMaterialSymbols/SMaterialSymbols";
-import SInputErrorMessage from "./SInputErrorMessage";
+import SInputErrorMessage from "../SInputErrorMessage/SInputErrorMessage";
 import { useId, useState } from "react";
 
 

@@ -40,6 +40,7 @@
 {
     margin: 0 var(--scm-ui-spacing-2);
     color: var(--scm-ui-fg-primary);
+    font-family: var(--scm-font-family), sans-serif;
 }
 .disabled .label
 {

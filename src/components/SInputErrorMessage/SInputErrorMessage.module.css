@@ -2,6 +2,7 @@
 {
     color: var(--scm-ui-accent-red-muted);
     font-size: var(--scm-ui-font-size-sm);
+    font-family: var(--scm-font-family), sans-serif;
     display: flex;
     align-items: center;
     width: auto;

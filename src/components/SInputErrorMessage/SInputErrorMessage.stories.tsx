@@ -1,4 +1,4 @@
-import SInputErrorMessage from "./SInputErrorMessage";
+import SInputErrorMessage from "./SInputErrorMessage.js";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
 
