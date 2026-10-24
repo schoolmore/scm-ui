@@ -1,0 +1,60 @@
+.avatar
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--scm-ui-bg-muted);
+    border-radius: var(--scm-ui-border-full);
+    width: fit-content;
+    height: fit-content;
+}
+.avatar p
+{
+    font-family: var(--scm-font-family), sans-serif;
+    color: var(--scm-ui-fg-primary);
+    font-weight: var(--scm-ui-font-weight-bold);
+    margin: 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.avatar.xs
+{
+    padding: var(--scm-ui-spacing-1);
+}
+.avatar.xs p
+{
+    font-size: var(--scm-ui-font-size-xs);
+}
+.avatar.sm
+{
+    padding: var(--scm-ui-spacing-2);
+}
+.avatar.sm p
+{
+    font-size: var(--scm-ui-font-size-sm);
+}
+.avatar.default
+{
+    padding: var(--scm-ui-spacing-3);
+}
+.avatar.default p
+{
+    font-size: var(--scm-ui-font-size-base);
+}
+.avatar.lg
+{
+    padding: var(--scm-ui-spacing-3-5);
+}
+.avatar.lg p
+{
+    font-size: var(--scm-ui-font-size-lg);
+}
+.avatar.xl
+{
+    padding: var(--scm-ui-spacing-4);
+}
+.avatar.xl p
+{
+    font-size: var(--scm-ui-font-size-xl);
+}

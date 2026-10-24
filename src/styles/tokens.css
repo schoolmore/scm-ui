@@ -38,6 +38,7 @@
   --scm-ui-border-sm            : 4px;
   --scm-ui-border-md            : 6px;
   --scm-ui-border-lg            : 8px;
+  --scm-ui-border-full          : 100%;
 
   --scm-ui-spacing-0            : 0;
   --scm-ui-spacing-0-5          : 0.125em;
