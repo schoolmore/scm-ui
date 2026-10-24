@@ -36,7 +36,7 @@ const SEmptyState = ( {
                 <h1>{title}</h1>
                 {description&&<h2>{description}</h2>}
             </div>
-            {onClick&&<SButton variant="secondary" text={buttonText} onClick={onClick} size="md" />}
+            {onClick&&<SButton variant="secondary" text={buttonText} onClick={onClick} size="default" />}
         </div>
     );
 
