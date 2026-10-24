@@ -1,6 +1,6 @@
 {
   "name": "@schoolmore/scm-ui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Librairie de composants React Schoolmore",
   "type": "module",
   "files": [
