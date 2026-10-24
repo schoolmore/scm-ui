@@ -1,5 +1,6 @@
 import styles from "./SInputErrorMessage.module.css";
 import SMaterialSymbols from "../SMaterialSymbols/SMaterialSymbols.js";
+import 'material-symbols';
 
 export interface ISInputErrorMessage {
     /** Message affiché sous l'input */

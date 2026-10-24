@@ -1,6 +1,7 @@
 import styles from "./SCheckbox.module.css";
 import { useId, useState } from "react";
 import SMaterialSymbols from "../SMaterialSymbols/SMaterialSymbols.js";
+import 'material-symbols';
 
 
 /** Liste des états possibles pour une checkbox */

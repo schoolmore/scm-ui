@@ -1,5 +1,6 @@
 import type { MaterialSymbol } from "material-symbols";
 import styles from './SMaterialSymbols.module.css';
+import 'material-symbols';
 
 /** Taille disponible pour l'affiche d'une icône */
 export type T_SMaterialSymbolsSize = "xxl" | "xl" | "lg" | "default" | "sm" | "xs";

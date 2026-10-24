@@ -3,6 +3,7 @@ import type { MaterialSymbol } from "material-symbols";
 import SMaterialSymbols from "../SMaterialSymbols/SMaterialSymbols";
 import SInputErrorMessage from "../SInputErrorMessage/SInputErrorMessage";
 import { useId, useState } from "react";
+import 'material-symbols';
 
 
 /** Taille disponible pour l'input */
