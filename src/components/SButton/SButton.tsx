@@ -6,7 +6,7 @@ import * as React from "react";
 /** Variantes du bouton disponibles */
 export type T_SButton_variant   = "primary" | "secondary" | "outline" | "ghost";
 /** Taille d'affichage du bouton */
-export type T_SButton_size      = "xs" | "sm" | "md" | "lg";
+export type T_SButton_size      = "xs" | "sm" | "default" | "lg";
 
 export interface ISButton {
     /** Différente variante du bouton, entre primaire, secondaire, outline ou ghost */
@@ -25,7 +25,9 @@ export interface ISButton {
     backIcon?   : MaterialSymbol,
 }
 
-const SButton = ( {variant, text, size = "md", disabled = false,onClick,frontIcon,backIcon}: ISButton ) => {
+const SButton = ( {
+        variant, text, size = "default", disabled = false,onClick,frontIcon,backIcon
+}: ISButton ) => {
 
     return (
         <button aria-label={text} onClick={onClick} disabled={disabled} className={`${styles.button} ${disabled?styles.disabled:""} ${styles[variant]} ${styles[size]}`}>

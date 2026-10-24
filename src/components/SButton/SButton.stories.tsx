@@ -8,7 +8,7 @@ const meta = {
     title     : "Components/SButton",
     component : SButton,
     tags      : ["autodocs"],
-    args      : { text : "Bouton", size: "md", disabled : false, onClick : e => action("onClick")(e) },
+    args      : { text : "Bouton", size: "default", disabled : false, onClick : e => action("onClick")(e) },
     argTypes  : {
         frontIcon   : {type: "string"},
         backIcon    : {type: "string"},
@@ -45,7 +45,7 @@ export const Action : Story = {
 }
 
 const variants  = ["primary", "secondary", "outline", "ghost"] as const;
-const sizes     = ["lg", "md", "sm", "xs"] as const;
+const sizes     = ["lg", "default", "sm", "xs"] as const;
 /** Combinaisons d'icônes affichées pour chaque taille dans la story Icons */
 const iconPlacements = [
     { frontIcon : "home" },

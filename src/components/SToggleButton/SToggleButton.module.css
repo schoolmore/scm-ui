@@ -1,0 +1,8 @@
+.tglParent
+{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    width: fit-content;
+    gap: var(--scm-ui-spacing-2-5);
+}

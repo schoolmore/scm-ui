@@ -77,7 +77,7 @@
 {
     font-size: var(--scm-ui-font-size-xl);
 }*/
-.button.md
+.button.default
 {
     gap: var(--scm-ui-spacing-3);
     padding: var(--scm-ui-spacing-2-5) var(--scm-ui-spacing-5);
