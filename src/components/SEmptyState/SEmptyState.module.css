@@ -1,0 +1,48 @@
+.emptyState
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    margin: 0;
+    gap: var(--scm-ui-spacing-11);
+}
+.emptyIcon
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--scm-ui-bg-muted);
+    padding: var(--scm-ui-spacing-4);
+    border-radius: var(--scm-ui-border-full);
+    font-size: var(--scm-ui-font-size-xl);
+}
+.emptyIcon.white
+{
+    background-color: var(--scm-ui-bg-background);
+}
+.infos
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--scm-ui-spacing-1);
+}
+.infos h1
+{
+    font-size: var(--scm-ui-font-size-xl);
+    font-weight: var(--scm-ui-font-weight-semibold);
+    color: var(--scm-ui-fg-primary);
+    font-family: var(--scm-font-family), sans-serif;
+    margin: 0;
+    text-align: center;
+}
+.infos h2
+{
+    font-size: var(--scm-ui-font-size-base);
+    font-weight: var(--scm-ui-font-weight-normal);
+    color: var(--scm-ui-fg-muted);
+    font-family: var(--scm-font-family), sans-serif;
+    margin: 0;
+    text-align: center;
+}

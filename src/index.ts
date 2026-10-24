@@ -9,3 +9,4 @@ export { default as SLink } from "./components/SLink/SLink";
 export { default as SBadge } from "./components/SBadge/SBadge";
 export { default as STabSelectorItem } from "./components/STabSelectorItem/STabSelectorItem";
 export { default as STabSelector } from "./components/STabSelector/STabSelector";
+export { default as SEmptyState } from "./components/SEmptyState/SEmptyState";
