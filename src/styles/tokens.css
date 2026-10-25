@@ -20,8 +20,8 @@
   --scm-ui-bg-background        : #FFFFFF;    /* Couleur background primaire */
   --scm-ui-bg-muted             : #EEEEEE;    /* Couleur background muted */
   --scm-ui-bg-muted-bis         : #D6D6D6;    /* Couleur background muted deux */
-  --scm-ui-bg-ghost-active      : #C1181810;  /* Couleur background d'un ghost actif */
-  --scm-ui-bg-muted-active      : #EEEEEE1E;  /* Couleur background muted actif */
+  --scm-ui-bg-ghost-active      : rgb(193 24 24 / 0.1);  /* Couleur background d'un ghost actif */
+  --scm-ui-bg-muted-active      : #EEEEEE4D;  /* Couleur background muted actif */
 
   --scm-ui-accent-red           : #EE0000;    /* Accentuation rouge */
   --scm-ui-accent-green         : #2BDE28;    /* Accentuation verte */

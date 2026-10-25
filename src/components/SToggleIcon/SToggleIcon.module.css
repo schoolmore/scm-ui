@@ -1,0 +1,43 @@
+.toggle
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--scm-ui-spacing-1);
+    border-radius: var(--scm-ui-border-sm);
+    cursor: pointer;
+    transition: background-color .4s;
+    background: var(--scm-ui-bg-muted);
+    border: none;
+    width: fit-content;
+}
+.toggle:not(.disabled):hover
+{
+    background: var(--scm-ui-bg-muted-active);
+}
+.toggle span
+{
+    color: var(--scm-ui-fg-primary) !important;
+    transition: color .4s;
+}
+.active
+{
+    background: var(--scm-ui-secondary);
+}
+.active:not(.disabled):hover
+{
+    background: var(--scm-ui-secondary-active);
+}
+.active span
+{
+    color: var(--scm-ui-primary) !important;
+}
+.disabled
+{
+    cursor: default;
+    background: var(--scm-ui-bg-muted-bis);
+}
+.disabled span
+{
+    color: var(--scm-ui-fg-placeholder) !important;
+}
