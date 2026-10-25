@@ -8,7 +8,7 @@ const meta = {
     title     : "Components/SButton",
     component : SButton,
     tags      : ["autodocs"],
-    args      : { text : "Bouton", size: "default", disabled : false, onClick : e => action("onClick")(e) },
+    args      : { text : "Bouton", size: "default", disabled : false},
     argTypes  : {
         frontIcon   : {type: "string"},
         backIcon    : {type: "string"},
@@ -39,7 +39,7 @@ export const Action : Story = {
     args : {
         variant : "primary", text : "Cliquez",onClick : (e) => {
             console.log("onClick");
-            action("onClick")(e);
+            action("onClick")({ name : "onClick", type: e.type, target: e.currentTarget.textContent });
         }
     }
 }

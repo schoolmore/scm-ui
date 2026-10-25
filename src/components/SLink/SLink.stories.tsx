@@ -38,8 +38,8 @@ export const Context : Story = {
 export const Action : Story = {
     args : {
         onClick : (e) => {
-            console.log("onClick");
-            action("onClick")(e)
+            console.log("onClick ", e);
+            action("onClick")(e?{name : "onClick", type : e.type, text : e.currentTarget.textContent}:{name: "onClick"})
         }
     }
 }

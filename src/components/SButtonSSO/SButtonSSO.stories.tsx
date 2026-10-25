@@ -27,7 +27,7 @@ export const Action : Story = {
     args : {
         onClick : (e) => {
             console.log("onClick ", e);
-            action("onClick")(e);
+            action("onClick")({name:  "onClick", text : e.currentTarget.textContent, type : e.type});
         }
     }
 }
