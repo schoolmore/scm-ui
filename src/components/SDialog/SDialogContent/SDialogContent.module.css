@@ -1,0 +1,44 @@
+.dialogPrt
+{
+    width: 100dvw;
+    height: 100dvh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(20,20,20,.5);
+    z-index: 4;
+}
+.dialog
+{
+    background-color: var(--scm-ui-bg-background);
+    display: flex;
+    flex-direction: column;
+    padding: var(--scm-ui-spacing-7) var(--scm-ui-spacing-6);
+    border-radius: var(--scm-ui-border-sm);
+    width: 25dvw;
+    gap: var(--scm-ui-spacing-5);
+    filter: var(--scm-ui-drop-shadow-md);
+    box-shadow: var(--scm-ui-drop-shadow-md);
+    z-index: 5;
+}
+
+@media screen and (max-width: 850px) {
+    .dialog {
+        width: 45dvw;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .dialog {
+        width: 65dvw;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .dialog {
+        width: 90dvw;
+    }
+}

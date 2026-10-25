@@ -1,0 +1,9 @@
+.content
+{
+    background-color: var(--scm-ui-bg-muted);
+    overflow: auto;
+    min-height: 60dvh;
+    max-height: 75dvh;
+    border-radius: var(--scm-ui-border-md);
+    padding: var(--scm-ui-spacing-1-5);
+}

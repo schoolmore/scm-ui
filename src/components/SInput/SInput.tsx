@@ -8,6 +8,8 @@ import 'material-symbols';
 
 /** Taille disponible pour l'input */
 export type T_SInputSize = "lg" | "default" | "sm";
+/** Couleur de fond disponible pour l'input */
+export type T_SInputBackground = "muted" | "white";
 
 export interface ISInput {
     /** Label affiché au dessus de l'input */
@@ -32,11 +34,13 @@ export interface ISInput {
      * alors, on affiche le message d'erreur, et passe le formulaire en "error" variant */
     validate?       : (v? : string) => string | undefined,
     /** Indique si le champ est désactivé */
-    disabled?       : boolean
+    disabled?       : boolean,
+    /** Couleur de fond de l'input */
+    background?     : T_SInputBackground,
 }
 
 const SInput = ( {
-    placeholder,size="default",icon="title",value,disabled=false,label,
+    placeholder,size="default",icon="title",value,disabled=false,label,background="muted",
     onChange,validate,onBlur,onEnter,onFocus,
 }: ISInput ) => {
 
@@ -48,7 +52,7 @@ const SInput = ( {
     return (
         <>
             {label&&<label className={styles.label} htmlFor={idForm}>{label}</label>}
-            <div className={`${styles.inputPrt} ${error&&styles.error} ${styles[size]} ${disabled?styles.disabled:''}`}>
+            <div className={`${styles.inputPrt} ${error&&styles.error} ${styles[size]} ${disabled?styles.disabled:''} ${background==="white"?styles.white:''}`}>
                 <div className={styles.icon}>
                     <SMaterialSymbols icon={icon} size="lg" color="var(--scm-ui-fg-placeholder)" />
                 </div>

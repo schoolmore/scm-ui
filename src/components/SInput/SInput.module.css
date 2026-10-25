@@ -27,6 +27,10 @@
     width: 100%;
     border-radius: var(--scm-ui-border-sm);
 }
+.white input
+{
+    background-color: var(--scm-ui-bg-background);
+}
 .inputPrt.sm input
 {
     font-size: var(--scm-ui-font-size-xs);

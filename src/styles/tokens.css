@@ -92,4 +92,11 @@
   --scm-ui-font-weight-bold     : 700;
   --scm-ui-font-weight-extrabold : 800;
   --scm-ui-font-weight-black    : 900;
+
+  /* filter : drop-shadow(var(--scm-ui-drop-shadow-md)) */
+  --scm-ui-drop-shadow-xs       : 0 1px 1px rgb(0 0 0 / 0.05);
+  --scm-ui-drop-shadow-sm       : 0 1px 2px rgb(0 0 0 / 0.15);
+  --scm-ui-drop-shadow-md       : 0 3px 3px rgb(0 0 0 / 0.12);
+  --scm-ui-drop-shadow-lg       : 0 4px 4px rgb(0 0 0 / 0.15);
+  --scm-ui-drop-shadow-xl       : 0 9px 7px rgb(0 0 0 / 0.1);
 }

@@ -1,0 +1,34 @@
+.title
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title p
+{
+    color: var(--scm-ui-fg-primary);
+    font-family: var(--scm-font-family), sans-serif;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.closeBtn
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--scm-ui-accent-red);
+    cursor: pointer;
+    padding: var(--scm-ui-spacing-1);
+    border-radius: var(--scm-ui-border-full);
+}
+.closeBtn span
+{
+    color: var(--scm-ui-fg-secondary) !important;
+}
+.movable
+{
+    cursor: move;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
