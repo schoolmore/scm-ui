@@ -7,7 +7,7 @@ import SDialogBody from "./SDialogBody/SDialogBody.js";
 import SDialogFooter from "./SDialogFooter/SDialogFooter.js";
 import { useState } from "react";
 import SMaterialSymbols from "../SMaterialSymbols/SMaterialSymbols.js";
-import SCloseDialog from "./SCloseDialog/SCloseDialog.js";
+import SDialogClose from "./SDialogClose/SDialogClose.js";
 import SInput from "../SInput/SInput.js";
 
 
@@ -89,12 +89,12 @@ export const DialogueAction : Story = {
                         <h1>CONTENU</h1>
                     </SDialogBody>
                     <SDialogFooter>
-                        <SCloseDialog>
+                        <SDialogClose>
                             <SButton variant={"secondary"} text={"Annuler"} />
-                        </SCloseDialog>
-                        <SCloseDialog>
+                        </SDialogClose>
+                        <SDialogClose>
                             <SButton onClick={save} variant={"primary"} text={"Sauvegarder"} />
-                        </SCloseDialog>
+                        </SDialogClose>
                     </SDialogFooter>
                 </SDialogContent>
             </SDialog>
@@ -140,12 +140,12 @@ export const DialogueEdition : Story = {
                         )}
                     </SDialogBody>
                     <SDialogFooter onEdit={setInEdit} toggleEdit={true}>
-                        <SCloseDialog>
+                        <SDialogClose>
                             <SButton onClick={() => setInEdit(false)} variant={"secondary"} text={"Annuler"} />
-                        </SCloseDialog>
-                        <SCloseDialog onBeforeClose={validateSave}>
+                        </SDialogClose>
+                        <SDialogClose onBeforeClose={validateSave}>
                             <SButton onClick={save} variant={"primary"} text={"Sauvegarder"} />
-                        </SCloseDialog>
+                        </SDialogClose>
                     </SDialogFooter>
                 </SDialogContent>
             </SDialog>
