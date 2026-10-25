@@ -1,0 +1,18 @@
+.group
+{
+    display: flex;
+    align-items: center;
+    gap: var(--scm-ui-spacing-2-5);
+}
+.group button
+{
+    width: 100%;
+}
+.fitWidth
+{
+    width: fit-content;
+}
+.fitWidth button
+{
+    width: fit-content;
+}

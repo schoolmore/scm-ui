@@ -3,6 +3,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: center;
     transition: background-color .4s, color .4s;
     font-family: var(--scm-font-family), sans-serif;
     font-weight: var(--scm-ui-font-weight-medium);
