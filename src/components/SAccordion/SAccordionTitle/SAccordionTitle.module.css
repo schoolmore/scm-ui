@@ -1,0 +1,58 @@
+.title
+{
+    cursor: pointer;
+    background: var(--scm-ui-bg-muted-bis);
+    display: flex;
+    border-radius: var(--scm-ui-border-md);
+    align-items: center;
+}
+.title::before
+{
+    font-family: 'Material Symbols Rounded', sans-serif;
+    content: "\e5df";
+    font-size: var(--scm-ui-font-size-lg);
+    transition: .4s;
+}
+.title p
+{
+    margin: 0;
+    font-weight: var(--scm-ui-font-weight-medium);
+}
+.expanded::before
+{
+    transform: rotate(90deg);
+}
+.disabled
+{
+    color: var(--scm-ui-fg-muted);
+    cursor: default;
+}
+
+/*** TAILLES ***/
+.title.default
+{
+    gap: var(--scm-ui-spacing-3);
+    padding: var(--scm-ui-spacing-2);
+}
+.title.default p
+{
+    font-size: var(--scm-ui-font-size-base);
+}
+.title.sm
+{
+    gap: var(--scm-ui-spacing-2-5);
+    padding: var(--scm-ui-spacing-1-5);
+}
+.title.sm p
+{
+    font-size: var(--scm-ui-font-size-sm);
+}
+.title.xs
+{
+    gap: var(--scm-ui-spacing-2);
+    padding: var(--scm-ui-spacing-1);
+}
+.title.xs p
+{
+    font-size: var(--scm-ui-font-size-xs);
+}

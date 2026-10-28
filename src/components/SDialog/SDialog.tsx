@@ -20,7 +20,7 @@ const SDialog = ( {
 
     const [isOpen,setIsOpen] = useState<boolean>(defaultOpen);
     const isControlled = open !== undefined;
-    const currentOpen = isControlled ? open : isOpen;
+    const currentOpen : boolean  = isControlled ? open : isOpen;
 
     const setOpen = (v : boolean) => {
         if (!isControlled) setIsOpen(v);

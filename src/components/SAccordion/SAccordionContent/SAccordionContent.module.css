@@ -1,0 +1,15 @@
+.content
+{
+    background: var(--scm-ui-bg-muted);
+    height: 0;
+    transition: .4s;
+    padding: 0;
+    overflow: hidden;
+}
+.expanded
+{
+    padding: var(--scm-ui-spacing-4);
+    overflow: auto;
+    max-height: 60dvh;
+    height: auto;
+}

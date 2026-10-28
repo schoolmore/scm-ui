@@ -5,7 +5,7 @@ import { type CSSProperties } from "react";
 
 
 const meta = {
-    title       : "Components/SInput/SInput",
+    title       : "Components/Input/SInput",
     component   : SInput,
     tags        : ["autodocs"],
     args        : {
