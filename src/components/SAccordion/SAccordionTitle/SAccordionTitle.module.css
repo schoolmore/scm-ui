@@ -18,6 +18,7 @@
 {
     margin: 0;
     font-weight: var(--scm-ui-font-weight-medium);
+    font-family: var(--scm-font-family), sans-serif;
 }
 .expanded
 {
