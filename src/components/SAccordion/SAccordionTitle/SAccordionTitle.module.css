@@ -1,8 +1,9 @@
 .title
 {
     cursor: pointer;
-    background: var(--scm-ui-bg-muted-bis);
+    background: var(--scm-ui-bg-muted);
     display: flex;
+    transition: color .4s;
     border-radius: var(--scm-ui-border-md);
     align-items: center;
 }
@@ -17,6 +18,10 @@
 {
     margin: 0;
     font-weight: var(--scm-ui-font-weight-medium);
+}
+.expanded
+{
+    background: var(--scm-ui-bg-gray-active);
 }
 .expanded::before
 {

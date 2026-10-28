@@ -15,8 +15,12 @@ const SAccordionContent = ( {
     const {isExpanded} = useAccordion();
 
     return (
-        <div className={`${styles.content} ${isExpanded?styles.expanded:''}`}>
-            {children}
+        <div className={`${styles.content} ${isExpanded?styles.expanded:''}`} inert={!isExpanded}>
+            <div className={styles.inner}>
+                <div className={styles.body}>
+                    {children}
+                </div>
+            </div>
         </div>
     );
 

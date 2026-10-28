@@ -1,15 +1,28 @@
 .content
 {
-    background: var(--scm-ui-bg-muted);
-    height: 0;
-    transition: .4s;
-    padding: 0;
-    overflow: hidden;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .4s ease, background-color .4s;
+    margin: 0 var(--scm-ui-spacing-2);
 }
 .expanded
 {
+    grid-template-rows: 1fr;
+}
+.inner
+{
+    overflow: hidden;
+    min-height: 0;
+}
+.body
+{
+    background: var(--scm-ui-bg-muted);
     padding: var(--scm-ui-spacing-4);
-    overflow: auto;
     max-height: 60dvh;
-    height: auto;
+    overflow: auto;
+}
+
+@media (prefers-reduced-motion: reduce)
+{
+    .content { transition: none; }
 }
