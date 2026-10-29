@@ -9,6 +9,7 @@ import { useState } from "react";
 import SMaterialSymbols from "../SMaterialSymbols/SMaterialSymbols.js";
 import SDialogClose from "./SDialogClose/SDialogClose.js";
 import SInput from "../SInput/SInput.js";
+import SField from "../SField/SField.js";
 
 
 const meta = {
@@ -135,8 +136,10 @@ export const DialogueEdition : Story = {
                     <SDialogBody>
                         <h1>CONTENU</h1>
                         {inEdit&&(
-                            <SInput placeholder={"Tapez du texte"} background="white" validate={validateForm}
-                                    onChange={(v) => setInEditValue(v)} icon={"title"} label="Votre texte" />
+                            <SField label={"Votre texte"}>
+                                <SInput placeholder={"Tapez du texte"} background="white" validate={validateForm} name={"text"}
+                                        onChange={(v) => setInEditValue(v)} icon={"title"} />
+                            </SField>
                         )}
                     </SDialogBody>
                     <SDialogFooter onEdit={setInEdit} toggleEdit={true}>
