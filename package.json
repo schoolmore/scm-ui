@@ -6,6 +6,11 @@
   "files": [
     "dist"
   ],
+  "author": {
+    "name": "Schoolmore",
+    "email": "contact@schoolmore.fr",
+    "url": "https://ui.schoolmore.fr"
+  },
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
