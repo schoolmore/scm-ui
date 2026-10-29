@@ -19,11 +19,17 @@ const SDialogTitle = ( {
     title,close = true,onClick,isMovable=false,handleProps,
 }: ISDialogTitle ) => {
 
+    const onKeyDown = (e : React.KeyboardEvent) : void => {
+        if (e.key === " ") onClick?.()
+    }
+
     return (
         <header {...handleProps} className={`${styles.title} ${isMovable?styles.movable:''}`}>
             <p>{title}</p>
             {close&&(
-                <div onPointerDown={e => e.stopPropagation()} onClick={onClick} className={styles.closeBtn}>
+                <div tabIndex={0} onKeyDown={onKeyDown}
+                        onPointerDown={e => e.stopPropagation()} onClick={onClick}
+                        className={styles.closeBtn}>
                     <SMaterialSymbols weight="bold" icon="close" size="lg" />
                 </div>
             )}
