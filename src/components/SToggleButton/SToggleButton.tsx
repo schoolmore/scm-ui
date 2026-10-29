@@ -43,8 +43,8 @@ const SToggleButton = ( {
 
     const triggerClick = (i : number) : void => {
         let copy : number[] = [...numSelected];
-        if(copy.includes(i)) copy = copy.filter(n => n !== i);
-        else copy.push(i);
+        if(copy.includes(i) && copy.length > 1) copy = copy.filter(n => n !== i);
+        else if (!copy.includes(i)) copy.push(i);
 
         const allElement : ISToggleButtonItem | undefined = toggles.find(t => t.all);
         const indexAllElement : number = toggles.findIndex(t => t.all);

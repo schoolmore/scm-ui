@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 
 
 const meta = {
-    title       : "Components/SInput/SInputErrorMessage",
+    title       : "Components/Input/SInputErrorMessage",
     component   : SInputErrorMessage,
     tags        : ["autodocs"],
     args        : {

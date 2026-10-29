@@ -16,8 +16,13 @@ const SLink = ( {
     texte,blank = false,onClick,
 }: ISLink ) => {
 
+    const onKeyDown = (e : React.KeyboardEvent) : void => {
+        if (e.key === " ") onClick?.()
+    }
+
     return (
-        <a className={`${styles.link} ${blank?styles.blank:''}`} aria-label={texte} onClick={onClick}>
+        <a tabIndex={0} onKeyDown={onKeyDown}
+            className={`${styles.link} ${blank?styles.blank:''}`} aria-label={texte} onClick={onClick}>
             <span>{texte}</span>
         </a>
     );
