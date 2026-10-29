@@ -12,10 +12,12 @@ export interface ISToggle {
     onClick?    : (v : boolean) => void,
     /** Indique si le toggle est désactivé ou non */
     disabled?   : boolean,
+    /** Clé pour le formulaire */
+    name        : string,
 }
 
 const SToggle = ( {
-    state=false,onClick,disabled,
+    state=false,onClick,disabled,name,
 }: ISToggle ) => {
 
     const [value,setValue] = useState<boolean>(state);
@@ -40,6 +42,7 @@ const SToggle = ( {
                 {value&&<SMaterialSymbols size="lg" icon="check" />}
                 {!value&&<SMaterialSymbols size="lg" icon="close" />}
             </div>
+            <input type="hidden" name={name} value={value+""}/>
         </div>
     );
 

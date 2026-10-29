@@ -1,9 +1,15 @@
 .rbParent
 {
     display: flex;
-    align-items: center;
-    gap: var(--scm-ui-spacing-2);
+    flex-direction: column;
     margin: 0;
+    gap: var(--scm-ui-spacing-1-5);
     width: fit-content;
+}
+.rbContent
+{
     flex-wrap: wrap;
+    gap: var(--scm-ui-spacing-2);
+    display: flex;
+    align-items: center;
 }

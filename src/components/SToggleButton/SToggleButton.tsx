@@ -60,7 +60,7 @@ const SToggleButton = ( {
     return (
         <div className={styles.tglParent}>
             {toggles.map((t : ISToggleButtonItem,i : number) => (
-                <SButton variant={numSelected.includes(i)?"primary":"outline"}
+                <SButton key={i} variant={numSelected.includes(i)?"primary":"outline"}
                         text={t.texte} frontIcon={numSelected.includes(i)?'check':undefined}
                         onClick={() => triggerClick(i)} size={size}
                 />

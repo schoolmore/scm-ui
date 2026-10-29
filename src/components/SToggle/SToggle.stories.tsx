@@ -8,7 +8,7 @@ const meta = {
     component   : SToggle,
     tags        : ["autodocs"],
     args        : {
-        state: false,
+        state: false,name:"test",
     },
     parameters : {
         docs : {

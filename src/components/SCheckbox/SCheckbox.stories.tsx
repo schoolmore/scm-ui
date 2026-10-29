@@ -9,7 +9,7 @@ const meta = {
     component   : SCheckbox,
     tags        : ["autodocs"],
     args        : {
-        label       : "Autoriser la connexion à l'espace parent", state : "off", size : "default",
+        label       : "Autoriser la connexion à l'espace parent", state : "off", size : "default",name:"connect",
     },
     parameters : {
         docs : {

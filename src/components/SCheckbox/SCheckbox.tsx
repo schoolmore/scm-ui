@@ -20,10 +20,12 @@ export interface ISCheckbox {
     onChange?   : (v : boolean) => void,
     /** Taille d'affichage de la checkbox */
     size?       : T_SCheckboxSize,
+    /** Clé de la checkbox pour le formulaire */
+    name        : string,
 }
 
 const SCheckbox = ( {
-    label,state,disabled,onChange,size = "default",
+    label,state,disabled,onChange,size = "default",name,
 }: ISCheckbox ) => {
 
     const [etat,setEtat] = useState<T_SCheckboxState>(state ?? "off");
@@ -56,6 +58,7 @@ const SCheckbox = ( {
                 {etat==="indeterminate"&&<SMaterialSymbols icon="remove" weight="medium" size="default" />}
             </div>
             {label&&<p id={idLabel} className={styles.label}>{label}</p>}
+            <input type="hidden" name={name} value={(etat!=="off")+""}/>
         </div>
     );
 

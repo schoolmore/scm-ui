@@ -9,7 +9,7 @@ const meta = {
     tags        : ["autodocs"],
     args        : {
         values : ["6eme","5eme","4eme","3eme","2nd","1ere","Tie"].map(
-            v => ({value:v}))
+            v => ({value:v})), name: "classe",
     },
     parameters : {
         docs : {
@@ -42,5 +42,12 @@ export const Disabled : Story = {
 export const Selected : Story = {
     args : {
         selected : 1
+    }
+}
+export const Validate : Story = {
+    args : {
+        validate : (v? : string) : string | undefined => {
+            if (!v || v !== "6eme") return "La classe doit respecter la contrainte suivante : \"6eme\""
+        }
     }
 }

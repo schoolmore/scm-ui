@@ -23,14 +23,18 @@ export interface ISButton {
     frontIcon?  : MaterialSymbol,
     /** Icône back, si vide, aucun */
     backIcon?   : MaterialSymbol,
+    /** Identifiant du formulaire à soumettre */
+    formId?     : string,
 }
 
 const SButton = ( {
-        variant, text, size = "default", disabled = false,onClick,frontIcon,backIcon
+        variant, text, size = "default", disabled = false,onClick,frontIcon,backIcon,formId,
 }: ISButton ) => {
 
     return (
-        <button aria-label={text} onClick={onClick} disabled={disabled} className={`${styles.button} ${disabled?styles.disabled:""} ${styles[variant]} ${styles[size]}`}>
+        <button aria-label={text} onClick={onClick} disabled={disabled}
+                type={formId?'submit':'button'} form={formId}
+                className={`${styles.button} ${disabled?styles.disabled:""} ${styles[variant]} ${styles[size]}`}>
             {frontIcon&&<span className="material-symbols-rounded">{frontIcon}</span>}
             {text}
             {backIcon&&<span className="material-symbols-rounded">{backIcon}</span>}

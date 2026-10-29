@@ -10,8 +10,7 @@ const meta = {
     tags        : ["autodocs"],
     args        : {
         size    : "default", icon : "title",
-        placeholder : "Tapez le nom de la matière",
-        label : "Nom de la matière",
+        placeholder : "Tapez le nom de la matière",name:"nomMatiere",
     },
     parameters : {
         docs : {
@@ -43,7 +42,6 @@ const testValidateEmail = (v? : string) : string | undefined => {
 
 export const InputAction : Story = {
     args : {
-        label   : "Adresse e-mail",
         icon    : "alternate_email",
         placeholder : "Tapez une adresse e-mail valide",
         validate : testValidateEmail,

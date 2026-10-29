@@ -1,0 +1,11 @@
+.field
+{
+    display: flex;
+    flex-direction: column;
+    margin: var(--scm-ui-spacing-2) 0;
+}
+.field label
+{
+    font-family: var(--scm-font-family), sans-serif;
+    margin: var(--scm-ui-spacing-1-5) 0;
+}
