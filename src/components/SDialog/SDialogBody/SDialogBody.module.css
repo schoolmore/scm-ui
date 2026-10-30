@@ -1,6 +1,6 @@
 .content
 {
-    background-color: var(--scm-ui-bg-muted);
+    background-color: var(--scm-ui-bg-dialog);
     overflow: auto;
     min-height: 60dvh;
     max-height: 75dvh;

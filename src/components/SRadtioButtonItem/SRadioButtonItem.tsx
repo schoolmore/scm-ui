@@ -11,11 +11,15 @@ export interface ISRadioButtonItem {
     /** Indique si l'élément est sélectionné */
     selected?   : boolean,
     /** Méthode exécuté au clic sur la coche */
-    onClick?    : () => void
+    onClick?    : () => void,
+    /** Doit être vrai pour le premier élément disponible */
+    focusable?  : boolean,
+    /** Référence du groupe parent */
+    ref?        : React.Ref<HTMLDivElement>,
 }
 
 const SRadioButtonItem = ( {
-    value,disabled = false,selected=false,onClick
+    value,disabled = false,selected=false,onClick,focusable=false,ref,
 }: ISRadioButtonItem ) => {
 
     const triggeredClick = () : void => {
@@ -32,7 +36,8 @@ const SRadioButtonItem = ( {
     const idLabel : string = useId();
 
     return (
-        <div aria-disabled={disabled} role="radio" aria-labelledby={idLabel} tabIndex={disabled?-1:0}
+        <div aria-disabled={disabled} role="radio" aria-checked={selected} ref={ref}
+                aria-labelledby={idLabel} tabIndex={focusable && !disabled?0:-1}
                 onKeyDown={onKeyDonw} onClick={triggeredClick}
                 className={`${styles.rb} ${disabled?styles.disabled:''} ${selected?styles.checked:''}`}>
             <div id={idElm} className={styles.rbContent}></div>

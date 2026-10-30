@@ -1,9 +1,10 @@
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import styles from "./SRadioButton.module.css";
 import SRadioButtonItem, { type ISRadioButtonItem } from "../SRadtioButtonItem/SRadioButtonItem";
 import SInputErrorMessage from "../SInputErrorMessage/SInputErrorMessage.js";
 import { useOptionalForm } from "../../context/SForm/SFormContext.js";
 import { useOptionalField } from "../../context/SField/SFieldContext.js";
+import * as React from "react";
 
 
 export interface ISRadioButton {
@@ -35,11 +36,34 @@ const SRadioButton = ( {
     const ownid     : string = useId();
     const idForm    : string = field?.id ?? ownid;
 
+    const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
+    const firstEnabled : number = values.findIndex(v => !v.disabled);
+    const focusIndex : number = value > 0 ? value : firstEnabled;
+
     const triggeredClick = (i : number) : void => {
         const oldValue : number = value;
         setValue(i);
         onChange?.(values[i].value, values[oldValue]?.value);
         setError(validate?.(values[i].value))
+    }
+
+    const onKeyDown = (e : React.KeyboardEvent) : void => {
+        if (disabled) return;
+        let dir : number;
+        if (e.key === "ArrowDown" || e.key === "ArrowRight") dir = 1;
+        else if (e.key === "ArrowUp" || e.key === "ArrowLeft") dir = -1;
+        else return;
+        e.preventDefault();
+
+        const start : number = value >= 0 ? value : (dir === 1 ? -1 : 0);
+        for (let k = 1; k <= values.length; k++) {
+            const i : number = (start + dir * k + values.length) % values.length;
+            if (!values[i].disabled) {
+                triggeredClick(i);
+                itemsRef.current[i]?.focus();
+                return;
+            }
+        }
     }
 
     useEffect(() => {
@@ -54,9 +78,11 @@ const SRadioButton = ( {
 
     return (
         <div className={styles.rbParent}>
-            <div className={styles.rbContent}>
+            <div aria-labelledby={idForm}
+                role={"radiogroup"} onKeyDown={onKeyDown} className={styles.rbContent}>
                 {values.map((v : ISRadioButtonItem,i : number) => (
-                    <SRadioButtonItem selected={value===i} disabled={v.disabled || disabled}
+                    <SRadioButtonItem selected={value===i} disabled={v.disabled || disabled} focusable={i === focusIndex}
+                                        ref={el => { itemsRef.current[i] = el; }}
                                         onClick={() => triggeredClick(i)} value={v.value} key={i} />
                 ))}
             </div>
