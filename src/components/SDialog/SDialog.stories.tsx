@@ -10,6 +10,7 @@ import SMaterialSymbols from "../SMaterialSymbols/SMaterialSymbols.js";
 import SDialogClose from "./SDialogClose/SDialogClose.js";
 import SInput from "../SInput/SInput.js";
 import SField from "../SField/SField.js";
+import useIsMobile from "../../hooks/useMobile.js";
 
 
 const meta = {
@@ -127,6 +128,8 @@ export const DialogueEdition : Story = {
             return;
         }
 
+        const isMobile = useIsMobile();
+
         return <>
             <SDialog>
                 <SDialogTrigger>
@@ -137,7 +140,7 @@ export const DialogueEdition : Story = {
                         <h1>CONTENU</h1>
                         {inEdit&&(
                             <SField label={"Votre texte"}>
-                                <SInput placeholder={"Tapez du texte"} background="white" validate={validateForm} name={"text"}
+                                <SInput placeholder={"Tapez du texte"} background={isMobile?"muted":"white"} validate={validateForm} name={"text"}
                                         onChange={(v) => setInEditValue(v)} icon={"title"} />
                             </SField>
                         )}
