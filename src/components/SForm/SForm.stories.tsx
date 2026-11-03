@@ -15,6 +15,7 @@ import SDialogBody from "../SDialog/SDialogBody/SDialogBody.js";
 import SDialogFooter from "../SDialog/SDialogFooter/SDialogFooter.js";
 import SDialogClose from "../SDialog/SDialogClose/SDialogClose.js";
 import SInfoCard from "../SInfoCard/SInfoCard.js";
+import useIsMobile from "../../hooks/useMobile.js";
 
 
 const meta = {
@@ -110,6 +111,7 @@ export const FormDialog : Story = {
         }, []);
 
         const openDialog = () : void => setOpen(true);
+        const isMobile = useIsMobile();
 
         return (
             <>
@@ -127,11 +129,11 @@ export const FormDialog : Story = {
                             <SForm id={"connect"} {...args} onSubmit={handleSubmit}>
                                 <SField label={"Nom d'utilisateur"}>
                                     <SInput placeholder={"Tapez le nom d'utilisateur"} name={"username"} onChange={() => setError(false)}
-                                            icon={"person"} validate={validateField} background={"white"}  />
+                                            icon={"person"} validate={validateField} background={isMobile?"muted":"white"}  />
                                 </SField>
                                 <SField label={"Mot de passe"}>
                                     <SInput placeholder={"Tapez le mot de passe"} name={"password"} onChange={() => setError(false)} type={"password"}
-                                            icon={"password"} background={"white"} validate={validateField} />
+                                            icon={"password"} background={isMobile?"muted":"white"} validate={validateField} />
                                 </SField>
                                 <SField label={"Rester connecté"}>
                                     <SCheckbox name={"stayConnected"} label={"Rester connecté pendant 1 mois"} />

@@ -1,6 +1,7 @@
 import styles from "./SDialogTitle.module.css";
 import SMaterialSymbols from "../../SMaterialSymbols/SMaterialSymbols.js";
 import * as React from "react";
+import useIsMobile from "../../../hooks/useMobile.js";
 
 export interface ISDialogTitle {
     /** Titre du dialogue */
@@ -19,6 +20,8 @@ const SDialogTitle = ( {
     title,close = true,onClick,isMovable=false,handleProps,
 }: ISDialogTitle ) => {
 
+    const isMobile = useIsMobile();
+
     const onKeyDown = (e : React.KeyboardEvent) : void => {
         if (e.key === " ") onClick?.()
     }
@@ -26,7 +29,7 @@ const SDialogTitle = ( {
     return (
         <header {...handleProps} className={`${styles.title} ${isMovable?styles.movable:''}`}>
             <p>{title}</p>
-            {close&&(
+            {!isMobile && close&&(
                 <div tabIndex={0} onKeyDown={onKeyDown}
                         onPointerDown={e => e.stopPropagation()} onClick={onClick}
                         className={styles.closeBtn}>

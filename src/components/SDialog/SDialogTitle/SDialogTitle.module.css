@@ -32,3 +32,9 @@
     user-select: none;
     -webkit-user-select: none;
 }
+
+@media screen and (max-width: 500px) {
+    .movable {
+        cursor: default;
+    }
+}

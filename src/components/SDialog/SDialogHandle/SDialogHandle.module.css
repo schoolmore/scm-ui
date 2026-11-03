@@ -1,0 +1,15 @@
+.handlePrt
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--scm-ui-spacing-4) 0;
+    touch-action: none;
+    cursor: grab;
+}
+.handle
+{
+    background-color: var(--scm-ui-bg-muted-bis);
+    height: .5dvh;
+    width: 20dvw;
+}

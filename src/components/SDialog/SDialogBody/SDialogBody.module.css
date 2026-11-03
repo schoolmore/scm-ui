@@ -5,5 +5,15 @@
     min-height: 60dvh;
     max-height: 75dvh;
     border-radius: var(--scm-ui-border-md);
-    padding: var(--scm-ui-spacing-1-5);
+    padding: var(--scm-ui-spacing-1-5) var(--scm-ui-spacing-3-5);
+}
+
+@media screen and (max-width: 500px) {
+    .content {
+        flex: 1;
+        min-height: 0;
+        max-height: none;
+        background-color: var(--scm-ui-bg-background);
+        padding: 0 0 var(--scm-ui-spacing-1-5) 0;
+    }
 }

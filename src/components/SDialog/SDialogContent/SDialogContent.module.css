@@ -31,14 +31,14 @@
     }
 }
 
-@media screen and (max-width: 450px) {
-    .dialog {
-        width: 65dvw;
+@media screen and (max-width: 500px) {
+    .dialogPrt {
+        align-items: end;
     }
-}
-
-@media screen and (max-width: 350px) {
     .dialog {
-        width: 90dvw;
+        width: 100dvw;
+        max-height: 90dvh;
+        box-sizing: border-box;
+        border-radius: var(--scm-ui-border-lg) var(--scm-ui-border-lg) 0 0;
     }
 }

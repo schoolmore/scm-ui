@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useRef, useState } from "react";
+import useIsMobile from "../useMobile.js";
 
 
 export interface IDraggableOffset {
@@ -25,18 +26,21 @@ const useDraggable = ( {
     enabled=true,
 }: IUseDraggable = {} ) : IUseDraggableResult => {
 
+    const isMobile = useIsMobile();
     const [offset, setOffset] = useState<IDraggableOffset>({ x : 0, y : 0 });
     // Position du curseur au début du drag, moins l'offset déjà appliqué
     const start = useRef<IDraggableOffset>({ x : 0, y : 0 });
 
     const onPointerDown = (e : React.PointerEvent<HTMLElement>) : void => {
         if (e.button !== 0) return;
+        if (isMobile) return;
         // La capture redirige tous les pointermove vers la poignée, même hors de celle-ci
         e.currentTarget.setPointerCapture(e.pointerId);
         start.current = { x : e.clientX - offset.x, y : e.clientY - offset.y };
     }
 
     const onPointerMove = (e : React.PointerEvent<HTMLElement>) : void => {
+        if (isMobile) return;
         if (!e.currentTarget.hasPointerCapture(e.pointerId)) return;
         setOffset({ x : e.clientX - start.current.x, y : e.clientY - start.current.y });
     }
