@@ -37,4 +37,15 @@
     .movable {
         cursor: default;
     }
+    .title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .title p
+    {
+        font-weight: var(--scm-ui-font-weight-semibold);
+        font-size: var(--scm-ui-font-size-lg);
+        margin: 0;
+    }
 }

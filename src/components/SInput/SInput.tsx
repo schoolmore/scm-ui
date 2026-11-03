@@ -7,6 +7,7 @@ import 'material-symbols';
 import { useOptionalForm } from "../../context/SForm/SFormContext.js";
 import { type ISFieldContext, useOptionalField } from "../../context/SField/SFieldContext.js";
 import * as React from "react";
+import { useOptionalDropDown } from "../../context/SDropDown/SDropDownContext.js";
 
 
 /** Taille disponible pour l'input */
@@ -52,6 +53,8 @@ const SInput = ( {
     const [error, setError] = useState<string>();
     const form = useOptionalForm();
     const inputRef = useRef<HTMLInputElement>(null);
+    const dropdown = useOptionalDropDown();
+
 
     /** ID du label parent */
     const fieldCtx   : ISFieldContext | undefined  = useOptionalField();
@@ -68,7 +71,10 @@ const SInput = ( {
             return err;
         });
         return () => form.unregister(idForm);
-    }, [form,inputRef,validate,idForm])
+    }, [form,inputRef,validate,idForm]);
+
+    /** Gestion Dropdown */
+    const valueDropdown : string | undefined = dropdown?.text ?? dropdown?.value;
 
     return (
         <>
@@ -77,11 +83,13 @@ const SInput = ( {
                     <SMaterialSymbols icon={icon} size="lg" color="var(--scm-ui-fg-placeholder)" />
                 </div>
                 <input
+                    className={dropdown!==undefined?styles.dropdown:''}
                     name={name} ref={inputRef}
                     onChange={(e) => {
                         onChange?.(e.target.value);
                         if (error) setError(validate?.(e.target.value));
                     }}
+                    readOnly={dropdown!==undefined}
                     onBlur={(e) => {
                         onBlur?.(e.target.value);
                         setError(validate?.(e.target.value));
@@ -91,13 +99,14 @@ const SInput = ( {
                         setError(validate?.(e.currentTarget.value))
                     }}
                     onFocus={(e) => {
+                        if (dropdown) dropdown.toggle(true);
                         onFocus?.(e.target.value);
                     }}
                     aria-invalid={!!error}
                     id={idForm}
                     aria-describedby={idError}
                     aria-label={placeholder} disabled={disabled}
-                    placeholder={placeholder} type={type} value={value}/>
+                    placeholder={placeholder} type={type} value={valueDropdown||value}/>
             </div>
             {error&&<SInputErrorMessage idMsg={idError} message={error} />}
         </>

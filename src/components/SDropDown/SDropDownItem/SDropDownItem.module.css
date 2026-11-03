@@ -1,0 +1,38 @@
+.item
+{
+    display: flex;
+    align-items: center;
+    padding: var(--scm-ui-spacing-3) var(--scm-ui-spacing-1-5);
+    cursor: pointer;
+    transition: background-color .4s;
+    background-color: var(--scm-ui-bg-background);
+    gap: 0 var(--scm-ui-spacing-1);
+}
+.item:hover
+{
+    background-color: var(--scm-ui-bg-muted-active);
+}
+.item p
+{
+    font-size: var(--scm-ui-font-size-base);
+    font-family: var(--scm-font-family), sans-serif;
+    font-weight: var(--scm-ui-font-weight-normal);
+    color: var(--scm-ui-fg-primary);
+    margin: 0;
+}
+.disabled
+{
+    cursor: default;
+}
+.disabled p
+{
+    color: var(--scm-ui-fg-muted);
+}
+.selected
+{
+    background-color: var(--scm-ui-bg-muted);
+}
+.selected p
+{
+    font-weight: var(--scm-ui-font-weight-semibold);
+}

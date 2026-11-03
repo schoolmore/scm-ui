@@ -64,3 +64,7 @@
     font-family: var(--scm-font-family), sans-serif;
     color: var(--scm-ui-fg-primary);
 }
+.dropdown
+{
+    cursor: pointer;
+}
