@@ -83,6 +83,11 @@ const SInput = ( {
 
     /** Gestion Dropdown */
     const valueDropdown : string | undefined = dropdown?.text ?? dropdown?.value;
+    const [prevOpen, setPrevOpen] = useState<boolean | undefined>(dropdown?.isOpen);
+    if (dropdown && dropdown.isOpen !== prevOpen) {
+        setPrevOpen(dropdown.isOpen);
+        if (!dropdown.isOpen) setError(validate?.(valueDropdown));
+    }
 
     return (
         <>
@@ -100,7 +105,7 @@ const SInput = ( {
                     readOnly={dropdown!==undefined}
                     onBlur={(e) => {
                         onBlur?.(e.target.value);
-                        setError(validate?.(e.target.value));
+                        if (!dropdown) setError(validate?.(e.target.value));
                     }}
                     onKeyUp={(e) => {
                         if (e.key === "Enter") onEnter?.(e.currentTarget.value)
