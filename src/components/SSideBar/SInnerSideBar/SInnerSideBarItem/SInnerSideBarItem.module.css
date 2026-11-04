@@ -1,0 +1,10 @@
+.item
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--scm-ui-bg-inner-sidebar);
+    padding: var(--scm-ui-spacing-2-5);
+    cursor: pointer;
+    transition: background-color .4s;
+}
