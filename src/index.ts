@@ -88,3 +88,5 @@ export type { ISSettingsField } from "./components/SSettingsField/SSettingsField
 export { default as SColorInput } from "./components/SColorInput/SColorInput";
 export type { ISColorInput } from "./components/SColorInput/SColorInput";
 export { default as useIsColorTooDark } from "./hooks/useColor";
+export { default as SNotificationIndicator } from "./components/SNotificationIndicator/SNotificationIndicator";
+export type { ISNotificationIndicator, T_SNotificationIndicatorSize, T_SNotificationIndicatorVariant } from "./components/SNotificationIndicator/SNotificationIndicator";

@@ -17,6 +17,7 @@
   --scm-ui-fg-placeholder       : #939393;    /* Couleur foreground pour les placeholder */
 
   --scm-ui-bg-sidebar           : #FFBFBF;    /* Couleur background pour la nav bar */
+  --scm-ui-bg-inner-sidebar     : #FFF0F0;    /* Couleur background pour la deuxième nav bar */
   --scm-ui-bg-background        : #FFFFFF;    /* Couleur background primaire */
   --scm-ui-bg-muted             : #EEEEEE;    /* Couleur background muted */
   --scm-ui-bg-muted-bis         : #D6D6D6;    /* Couleur background muted deux */

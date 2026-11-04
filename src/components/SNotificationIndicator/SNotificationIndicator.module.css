@@ -1,0 +1,63 @@
+.notification
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--scm-ui-border-full);
+}
+.notification p
+{
+    margin: 0;
+    font-family: var(--scm-font-family), sans-serif;
+    font-weight: var(--scm-ui-font-weight-medium);
+    user-select: none;
+    -webkit-user-select: none;
+    text-align: center;
+}
+
+/*** Variantes */
+.primary
+{
+    background-color: var(--scm-ui-primary);
+}
+.primary p
+{
+    color: var(--scm-ui-fg-secondary);
+}
+.secondary
+{
+    background-color: var(--scm-ui-secondary);
+}
+.secondary p
+{
+    color: var(--scm-ui-primary);
+}
+
+/*** Tailles */
+.default
+{
+    width: 2.25em;
+    height: 2.25em;
+}
+.default p
+{
+    font-size: var(--scm-ui-font-size-base);
+}
+.sm
+{
+    width: 1.75em;
+    height: 1.75em;
+}
+.sm p
+{
+    font-size: var(--scm-ui-font-size-sm);
+}
+.xs
+{
+    width: 1.25em;
+    height: 1.25em;
+}
+.xs p
+{
+    font-size: var(--scm-ui-font-size-xs);
+}
