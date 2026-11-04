@@ -43,11 +43,19 @@ export interface ISInput {
     background?     : T_SInputBackground,
     /** Type de l'input (text par défaut) */
     type?           : React.HTMLInputTypeAttribute,
+    /** Taille maximale de saisie d'un input */
+    maxLength?      : number,
+    /** Pas pour les champs numériques */
+    step?           : number,
+    /** Valeur minimale pour les champs numériques */
+    min?            : number,
+    /** Valeur maximale pour les champs numériques */
+    max?            : number,
 }
 
 const SInput = ( {
     placeholder,size="default",icon="title",value,disabled=false,background="muted",
-    onChange,validate,onBlur,onEnter,onFocus,name,type="text",
+    onChange,validate,onBlur,onEnter,onFocus,name,type="text",maxLength,step,min,max,
 }: ISInput ) => {
 
     const [error, setError] = useState<string>();
@@ -104,9 +112,12 @@ const SInput = ( {
                     }}
                     aria-invalid={!!error}
                     id={idForm}
-                    aria-describedby={idError}
-                    aria-label={placeholder} disabled={disabled}
+                    aria-describedby={idError} step={step} min={min} max={max}
+                    aria-label={placeholder} disabled={disabled} maxLength={maxLength}
                     placeholder={placeholder} type={type} value={valueDropdown||value}/>
+                {dropdown?.value && (
+                    <input type="hidden" aria-hidden={true} value={dropdown.value} name={`dropdown-${name}`}/>
+                )}
             </div>
             {error&&<SInputErrorMessage idMsg={idError} message={error} />}
         </>

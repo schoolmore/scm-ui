@@ -12,4 +12,5 @@
     background-color: var(--scm-ui-bg-muted-bis);
     height: .5dvh;
     width: 20dvw;
+    border-radius: var(--scm-ui-border-md);
 }

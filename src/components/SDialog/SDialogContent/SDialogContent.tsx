@@ -53,14 +53,16 @@ const SDialogContent = ( {
                 <motion.div
                     initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}
                     key="dialog-pc" className={styles.dialogPrt}>
-                    <motion.div
-                        animate={{opacity: 1,y: 0}} initial={{opacity: 0.5,y: "1.5dvh"}}
-                        exit={{opacity: 0, y: "2dvh"}}
-                        style={{transform : `translate(${offset.x}px, ${offset.y}px)`}}
-                        className={styles.dialog}>
-                        <SDialogTitle onClick={() => toggle(false)} handleProps={handleProps} isMovable={isMovable} title={title} />
-                        {children}
-                    </motion.div>
+                    {/* Le déplacement est porté par ce div : framer-motion écraserait style.transform en animant y */}
+                    <div style={{transform : `translate(${offset.x}px, ${offset.y}px)`}}>
+                        <motion.div
+                            animate={{opacity: 1,y: 0}} initial={{opacity: 0.5,y: "1.5dvh"}}
+                            exit={{opacity: 0, y: "2dvh"}}
+                            className={styles.dialog}>
+                            <SDialogTitle onClick={() => toggle(false)} handleProps={handleProps} isMovable={isMovable} title={title} />
+                            {children}
+                        </motion.div>
+                    </div>
                 </motion.div>
             )}
         </AnimatePresence>

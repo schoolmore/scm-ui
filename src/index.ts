@@ -83,3 +83,5 @@ export type { ISDropDownContent } from "./components/SDropDown/SDropDownContent/
 export type { ISDropDownContext } from "./context/SDropDown/SDropDownContext";
 export { default as SDropDownSearch } from "./components/SDropDown/SDropDownSearch/SDropDownSearch";
 export type { ISDropDownSearch } from "./components/SDropDown/SDropDownSearch/SDropDownSearch";
+export { default as SSettingsField } from "./components/SSettingsField/SSettingsField";
+export type { ISSettingsField } from "./components/SSettingsField/SSettingsField";

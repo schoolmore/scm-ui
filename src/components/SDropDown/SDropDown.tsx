@@ -1,5 +1,9 @@
 import * as React from "react";
-import { useEffect, useId, useState } from "react";
+import { useCallback, useState } from "react";
+import {
+    autoUpdate, flip, offset, shift, size,
+    useDismiss, useFloating, useInteractions,
+} from "@floating-ui/react";
 import { SDropDownContext } from "../../context/SDropDown/SDropDownContext.js";
 
 
@@ -23,10 +27,10 @@ const SDropDown = ( {
 
     const values : Set<string> = new Set();
 
-    const toggle = (v : boolean) => {
+    const toggle = useCallback((v : boolean) => {
         setSearchValue("");
         setOpen(v);
-    }
+    }, [])
 
     const updatedValue = ( v? : string ) : void => {
         if (disabled) return;
@@ -46,27 +50,37 @@ const SDropDown = ( {
         setSearchValue(v);
     }
 
-    const idElm : string = useId();
-    useEffect( () => {
-        if (!open) return;
+    const { refs, floatingStyles, context, placement } = useFloating({
+        open,
+        onOpenChange    : toggle,
+        placement       : "bottom-start",
+        whileElementsMounted : autoUpdate,
+        middleware      : [
+            offset(4),
+            flip({ padding: 8 }),
+            shift({ padding: 8 }),
+            size({
+                padding : 8,
+                apply({ rects, elements, availableHeight }) {
+                    // Même largeur que le trigger, hauteur limitée à la place disponible
+                    elements.floating.style.width = `${rects.reference.width}px`;
+                    elements.floating.style.setProperty("--scm-ui-dropdown-available-height", `${availableHeight}px`);
+                },
+            }),
+        ],
+    });
 
-        const handleClick = (e: MouseEvent): void => {
-            const elm = document.getElementById(idElm);
-            if (elm && !elm.contains(e.target as Node)) toggle(false);
-        };
-
-        document.addEventListener("click", handleClick);
-        return () => document.removeEventListener("click", handleClick);
-
-    }, [idElm,toggle,open] );
+    // Fermeture au clic extérieur (trigger + contenu en portal) et à Échap
+    const dismiss = useDismiss(context);
+    const { getReferenceProps, getFloatingProps } = useInteractions([dismiss]);
 
     return (
         <SDropDownContext.Provider value={
-            {toggle,isOpen:open,setValue:updatedValue,value,text,setText:updateText,register,values,searchUpdated,searchValue}
+            {toggle,isOpen:open,setValue:updatedValue,value,text,setText:updateText,register,values,searchUpdated,searchValue,
+             setReference:refs.setReference,setFloating:refs.setFloating,
+             floatingStyles,placement,getReferenceProps,getFloatingProps}
         }>
-            <span id={idElm}>
-                {children}
-            </span>
+            {children}
         </SDropDownContext.Provider>
     );
 

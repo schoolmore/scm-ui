@@ -1,0 +1,28 @@
+.settingsField
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.start
+{
+    display: flex;
+    flex-direction: column;
+    gap: var(--scm-ui-spacing-2);
+}
+.start label
+{
+    font-family: var(--scm-font-family), sans-serif;
+    font-size: var(--scm-ui-font-size-lg);
+    font-weight: var(--scm-ui-font-weight-semibold);
+    color: var(--scm-ui-fg-primary);
+    margin: 0;
+}
+.start p
+{
+    margin: 0;
+    font-family: var(--scm-font-family), sans-serif;
+    font-size: var(--scm-ui-font-size-sm);
+    font-weight: var(--scm-ui-font-weight-light);
+    color: var(--scm-ui-fg-muted);
+}

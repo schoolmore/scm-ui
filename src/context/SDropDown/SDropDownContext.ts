@@ -1,4 +1,6 @@
 import { createContext, useContext } from "react";
+import type * as React from "react";
+import type { Placement, UseFloatingReturn, UseInteractionsReturn } from "@floating-ui/react";
 
 
 export interface ISDropDownContext {
@@ -22,6 +24,18 @@ export interface ISDropDownContext {
     searchUpdated   : (v? : string) => void,
     /** Contenu de la recherche */
     searchValue     : string,
+    /** Enregistre l'élément trigger auprès de floating-ui */
+    setReference    : UseFloatingReturn["refs"]["setReference"],
+    /** Enregistre l'élément contenu auprès de floating-ui */
+    setFloating     : UseFloatingReturn["refs"]["setFloating"],
+    /** Styles de positionnement du contenu */
+    floatingStyles  : React.CSSProperties,
+    /** Placement final du contenu (après flip) */
+    placement       : Placement,
+    /** Props à appliquer sur le trigger */
+    getReferenceProps : UseInteractionsReturn["getReferenceProps"],
+    /** Props à appliquer sur le contenu */
+    getFloatingProps  : UseInteractionsReturn["getFloatingProps"],
 }
 
 export const SDropDownContext = createContext<ISDropDownContext | undefined>(undefined);

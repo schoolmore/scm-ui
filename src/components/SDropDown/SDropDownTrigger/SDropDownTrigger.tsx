@@ -11,10 +11,10 @@ const SDropDownTrigger = ( {
     children
 }: ISDropDownTrigger ) => {
 
-    const {toggle} = useDropDown();
+    const {toggle,setReference,getReferenceProps} = useDropDown();
 
     return (
-        <div onClick={() => toggle(true)}>
+        <div ref={setReference} {...getReferenceProps({ onClick: () => toggle(true) })}>
             {children}
         </div>
     );

@@ -11,6 +11,15 @@ import SDialogClose from "./SDialogClose/SDialogClose.js";
 import SInput from "../SInput/SInput.js";
 import SField from "../SField/SField.js";
 import useIsMobile from "../../hooks/useMobile.js";
+import SForm from "../SForm/SForm.js";
+import { action } from "storybook/actions";
+import SDropDown from "../SDropDown/SDropDown.js";
+import SDropDownTrigger from "../SDropDown/SDropDownTrigger/SDropDownTrigger.js";
+import SDropDownContent from "../SDropDown/SDropDownContent/SDropDownContent.js";
+import SDropDownItem from "../SDropDown/SDropDownItem/SDropDownItem.js";
+import SSettingsField from "../SSettingsField/SSettingsField.js";
+import SToggle from "../SToggle/SToggle.js";
+import SPastille from "../SPastille/SPastille.js";
 
 
 const meta = {
@@ -157,5 +166,105 @@ export const DialogueEdition : Story = {
             </SDialog>
             <p>Données sauvegardées : {value}</p>
         </>
+    }
+}
+
+const niveauxClasse : string[] = [
+    "6eme","5eme","4eme","3eme","2nd","1ere","Tie"
+];
+
+const periodes : {id:string,color:string,name:string}[] = [
+    {id : "tri", color : "#55cd59", name : "Trimestres"},
+    {id : "sem", color : "#c15951", name : "Semestres"},
+    {id : "off", color : "#5d2723", name : "Hors-période"},
+    {id : "per", color : "#efaf3e", name : "Périodes"},
+]
+
+export const DialogueMobile : Story = {
+    args : {
+        children : <></>
+    },
+    globals: {
+        viewport: { value: 'mobile2', isRotated: false },
+    },
+    render : () => {
+
+        const [modalOpen, setModalOpen] = useState<boolean>(false);
+
+        const handleSubmit = (d:  Record<string, FormDataEntryValue>) : void => {
+            console.log("onSubmit ", d);
+            action("onSubmit")(d);
+            setModalOpen(false);
+        }
+
+        const validateInput = (v? : string) : string | undefined => {
+            if (!v || v.length < 2) return "Veuillez indiquer une valeur valide !"
+        }
+
+        return (
+            <SDialog open={modalOpen} onOpenChange={setModalOpen}>
+                <SDialogTrigger>
+                    <SButton onClick={() => setModalOpen(true)} variant={"primary"} size="sm" text={"Nouvelle classe"} frontIcon="add_circle" />
+                </SDialogTrigger>
+                <SDialogContent title={"Créer une classe"}>
+                    <SDialogBody>
+                        <SForm onSubmit={handleSubmit} id={"createClasse"}>
+                            <SField label={"Nom de la classe"}>
+                                <SInput placeholder={"Tapez le nom complet de la classe"} name={"name"}
+                                        validate={validateInput}
+                                        icon={"title"} />
+                            </SField>
+                            <SField label={"Code de la classe"}>
+                                <SInput placeholder={"Tapez le code de 2 à 6 caractères de la classe"} name={"code"}
+                                        maxLength={6} validate={validateInput}
+                                        icon={"tag"} />
+                            </SField>
+                            <SField label={"Niveau de la classe"}>
+                                <SDropDown>
+                                    <SDropDownTrigger>
+                                        <SInput placeholder={"Sélectionnez le niveau de la classe"}
+                                                name={"niveau"} icon={"school"} validate={validateInput} />
+                                    </SDropDownTrigger>
+                                    <SDropDownContent>
+                                        {niveauxClasse.map((n,i) => (
+                                            <SDropDownItem text={n} key={i} value={n}>
+                                                <p>{n}</p>
+                                            </SDropDownItem>
+                                        ))}
+                                    </SDropDownContent>
+                                </SDropDown>
+                            </SField>
+                            <SSettingsField label={"Classe variable"}
+                                            description={"Autoriser les effectifs à varier pendant l'année"}>
+                                <SToggle name={"variable"} />
+                            </SSettingsField>
+                            <SField label={"Période de notation"}>
+                                <SDropDown>
+                                    <SDropDownTrigger>
+                                        <SInput placeholder={"Sélectionnez la période de notation de la classe"}
+                                                name={"notation"} icon={"123"} validate={validateInput} />
+                                    </SDropDownTrigger>
+                                    <SDropDownContent hasSearch={false}>
+                                        {periodes.map((n,i) => (
+                                            <SDropDownItem text={n.name} value={n.id} key={i}>
+                                                <SPastille color={n.color} />
+                                                <p>{n.name}</p>
+                                            </SDropDownItem>
+                                        ))}
+                                    </SDropDownContent>
+                                </SDropDown>
+                            </SField>
+                        </SForm>
+                    </SDialogBody>
+                    <SDialogFooter>
+                        <SDialogClose>
+                            <SButton variant={"secondary"} text={"Annuler"} backIcon={"close"} />
+                        </SDialogClose>
+                        <SButton formId="createClasse" variant={"primary"} text={"Créer"} backIcon={"check"} />
+                    </SDialogFooter>
+                </SDialogContent>
+            </SDialog>
+        )
+
     }
 }
