@@ -20,6 +20,8 @@ import SDropDownItem from "../SDropDown/SDropDownItem/SDropDownItem.js";
 import SSettingsField from "../SSettingsField/SSettingsField.js";
 import SToggle from "../SToggle/SToggle.js";
 import SPastille from "../SPastille/SPastille.js";
+import SColorInput from "../SColorInput/SColorInput.js";
+import SEmptyState from "../SEmptyState/SEmptyState.js";
 
 
 const meta = {
@@ -180,6 +182,18 @@ const periodes : {id:string,color:string,name:string}[] = [
     {id : "per", color : "#efaf3e", name : "Périodes"},
 ]
 
+/**
+ * Décrire une classe
+ */
+interface IClasse {
+    color       : string,
+    name        : string,
+    code        : string,
+    niveau      : string,
+    variable    : boolean,
+    notation    : string,
+}
+
 export const DialogueMobile : Story = {
     args : {
         children : <></>
@@ -190,80 +204,111 @@ export const DialogueMobile : Story = {
     render : () => {
 
         const [modalOpen, setModalOpen] = useState<boolean>(false);
+        const [classes,setClasses] = useState<IClasse[]>([]);
 
         const handleSubmit = (d:  Record<string, FormDataEntryValue>) : void => {
             console.log("onSubmit ", d);
             action("onSubmit")(d);
             setModalOpen(false);
+            const newClasse : IClasse = {
+                color       : d.color as string,
+                code        : d.code as string,
+                name        : d.name as string,
+                niveau      : d["dropdown-niveau"] as string,
+                notation    : d["dropdown-notation"] as string,
+                variable    : d.varaible==="true",
+            }
+            setClasses([...classes, newClasse])
         }
 
         const validateInput = (v? : string) : string | undefined => {
             if (!v || v.length < 2) return "Veuillez indiquer une valeur valide !"
         }
 
+
+
         return (
-            <SDialog open={modalOpen} onOpenChange={setModalOpen}>
-                <SDialogTrigger>
-                    <SButton onClick={() => setModalOpen(true)} variant={"primary"} size="sm" text={"Nouvelle classe"} frontIcon="add_circle" />
-                </SDialogTrigger>
-                <SDialogContent title={"Créer une classe"}>
-                    <SDialogBody>
-                        <SForm onSubmit={handleSubmit} id={"createClasse"}>
-                            <SField label={"Nom de la classe"}>
-                                <SInput placeholder={"Tapez le nom complet de la classe"} name={"name"}
-                                        validate={validateInput}
-                                        icon={"title"} />
-                            </SField>
-                            <SField label={"Code de la classe"}>
-                                <SInput placeholder={"Tapez le code de 2 à 6 caractères de la classe"} name={"code"}
-                                        maxLength={6} validate={validateInput}
-                                        icon={"tag"} />
-                            </SField>
-                            <SField label={"Niveau de la classe"}>
-                                <SDropDown>
-                                    <SDropDownTrigger>
-                                        <SInput placeholder={"Sélectionnez le niveau de la classe"}
-                                                name={"niveau"} icon={"school"} validate={validateInput} />
-                                    </SDropDownTrigger>
-                                    <SDropDownContent>
-                                        {niveauxClasse.map((n,i) => (
-                                            <SDropDownItem text={n} key={i} value={n}>
-                                                <p>{n}</p>
-                                            </SDropDownItem>
-                                        ))}
-                                    </SDropDownContent>
-                                </SDropDown>
-                            </SField>
-                            <SSettingsField label={"Classe variable"}
-                                            description={"Autoriser les effectifs à varier pendant l'année"}>
-                                <SToggle name={"variable"} />
-                            </SSettingsField>
-                            <SField label={"Période de notation"}>
-                                <SDropDown>
-                                    <SDropDownTrigger>
-                                        <SInput placeholder={"Sélectionnez la période de notation de la classe"}
-                                                name={"notation"} icon={"123"} validate={validateInput} />
-                                    </SDropDownTrigger>
-                                    <SDropDownContent hasSearch={false}>
-                                        {periodes.map((n,i) => (
-                                            <SDropDownItem text={n.name} value={n.id} key={i}>
-                                                <SPastille color={n.color} />
-                                                <p>{n.name}</p>
-                                            </SDropDownItem>
-                                        ))}
-                                    </SDropDownContent>
-                                </SDropDown>
-                            </SField>
-                        </SForm>
-                    </SDialogBody>
-                    <SDialogFooter>
-                        <SDialogClose>
-                            <SButton variant={"secondary"} text={"Annuler"} backIcon={"close"} />
-                        </SDialogClose>
-                        <SButton formId="createClasse" variant={"primary"} text={"Créer"} backIcon={"check"} />
-                    </SDialogFooter>
-                </SDialogContent>
-            </SDialog>
+            <>
+                <SDialog open={modalOpen} onOpenChange={setModalOpen}>
+                    <SDialogTrigger>
+                        <SButton onClick={() => setModalOpen(true)} variant={"primary"} size="sm" text={"Nouvelle classe"} frontIcon="add_circle" />
+                    </SDialogTrigger>
+                    <SDialogContent title={"Créer une classe"}>
+                        <SDialogBody>
+                            <SForm onSubmit={handleSubmit} id={"createClasse"}>
+                                <SField label={"Couleur d'affichage"}>
+                                    <SColorInput name={"color"} validate={validateInput} />
+                                </SField>
+                                <SField label={"Nom de la classe"}>
+                                    <SInput placeholder={"Tapez le nom complet de la classe"} name={"name"}
+                                            validate={validateInput}
+                                            icon={"title"} />
+                                </SField>
+                                <SField label={"Code de la classe"}>
+                                    <SInput placeholder={"Tapez le code de 2 à 6 caractères de la classe"} name={"code"}
+                                            maxLength={6} validate={validateInput}
+                                            icon={"tag"} />
+                                </SField>
+                                <SField label={"Niveau de la classe"}>
+                                    <SDropDown>
+                                        <SDropDownTrigger>
+                                            <SInput placeholder={"Sélectionnez le niveau de la classe"}
+                                                    name={"niveau"} icon={"school"} validate={validateInput} />
+                                        </SDropDownTrigger>
+                                        <SDropDownContent>
+                                            {niveauxClasse.map((n,i) => (
+                                                <SDropDownItem text={n} key={i} value={n}>
+                                                    <p>{n}</p>
+                                                </SDropDownItem>
+                                            ))}
+                                        </SDropDownContent>
+                                    </SDropDown>
+                                </SField>
+                                <SSettingsField label={"Classe variable"}
+                                                description={"Autoriser les effectifs à varier pendant l'année"}>
+                                    <SToggle name={"variable"} />
+                                </SSettingsField>
+                                <SField label={"Période de notation"}>
+                                    <SDropDown>
+                                        <SDropDownTrigger>
+                                            <SInput placeholder={"Sélectionnez la période de notation de la classe"}
+                                                    name={"notation"} icon={"123"} validate={validateInput} />
+                                        </SDropDownTrigger>
+                                        <SDropDownContent hasSearch={false}>
+                                            {periodes.map((n,i) => (
+                                                <SDropDownItem text={n.name} value={n.id} key={i}>
+                                                    <SPastille color={n.color} />
+                                                    <p>{n.name}</p>
+                                                </SDropDownItem>
+                                            ))}
+                                        </SDropDownContent>
+                                    </SDropDown>
+                                </SField>
+                            </SForm>
+                        </SDialogBody>
+                        <SDialogFooter>
+                            <SDialogClose>
+                                <SButton variant={"secondary"} text={"Annuler"} backIcon={"close"} />
+                            </SDialogClose>
+                            <SButton formId="createClasse" variant={"primary"} text={"Créer"} backIcon={"check"} />
+                        </SDialogFooter>
+                    </SDialogContent>
+                </SDialog>
+                {classes.map((c,i) => (
+                    <div key={i}>
+                        <div style={{display: "flex", alignItems: "center",gap:".5em"}}>
+                            <SPastille color={c.color} />
+                            <h1>{c.name}</h1>
+                            <h2>{c.code}</h2>
+                        </div>
+                    </div>
+                ))}
+                {classes.length===0&&(
+                    <div style={{display: "flex",alignItems: "center",justifyContent: "center",minHeight: "80dvh"}}>
+                        <SEmptyState title={"Aucune classe"} icon={"school"} />
+                    </div>
+                )}
+            </>
         )
 
     }

@@ -20,8 +20,10 @@ export interface ISInput {
     placeholder     : string,
     /** Taille du champ de saisie */
     size?           : T_SInputSize,
-    /** Valeur prédéfinie du champ */
+    /** Valeur du champ en mode contrôlé */
     value?          : string,
+    /** Valeur par défaut du champ */
+    defaultValue?   : string,
     /** Clé du champ pour le formulaire */
     name            : string,
     /** Icône devant l'input */
@@ -54,7 +56,7 @@ export interface ISInput {
 }
 
 const SInput = ( {
-    placeholder,size="default",icon="title",value,disabled=false,background="muted",
+    placeholder,size="default",icon="title",value,disabled=false,background="muted",defaultValue,
     onChange,validate,onBlur,onEnter,onFocus,name,type="text",maxLength,step,min,max,
 }: ISInput ) => {
 
@@ -116,7 +118,7 @@ const SInput = ( {
                         onFocus?.(e.target.value);
                     }}
                     aria-invalid={!!error}
-                    id={idForm}
+                    id={idForm} defaultValue={defaultValue}
                     aria-describedby={idError} step={step} min={min} max={max}
                     aria-label={placeholder} disabled={disabled} maxLength={maxLength}
                     placeholder={placeholder} type={type} value={valueDropdown||value}/>

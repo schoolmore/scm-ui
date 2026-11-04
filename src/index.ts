@@ -85,3 +85,6 @@ export { default as SDropDownSearch } from "./components/SDropDown/SDropDownSear
 export type { ISDropDownSearch } from "./components/SDropDown/SDropDownSearch/SDropDownSearch";
 export { default as SSettingsField } from "./components/SSettingsField/SSettingsField";
 export type { ISSettingsField } from "./components/SSettingsField/SSettingsField";
+export { default as SColorInput } from "./components/SColorInput/SColorInput";
+export type { ISColorInput } from "./components/SColorInput/SColorInput";
+export { default as useIsColorTooDark } from "./hooks/useColor";

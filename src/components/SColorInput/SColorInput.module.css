@@ -1,0 +1,54 @@
+.parentInput
+{
+    display: flex;
+    flex-direction: column;
+    gap: var(--scm-ui-spacing-1);
+}
+.inputColor
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--scm-ui-spacing-3-5);
+}
+.input
+{
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: var(--scm-ui-spacing-2) 0;
+    width: 100%;
+}
+.input input
+{
+    background-color: var(--scm-ui-bg-muted);
+    color: var(--scm-ui-fg-primary);
+    border: none;
+    border-bottom: 2px solid var(--scm-ui-fg-muted);
+    font-size: var(--scm-ui-font-size-sm);
+    font-weight: var(--scm-ui-font-weight-normal);
+    font-family: var(--scm-font-family), sans-serif;
+    padding: var(--scm-ui-spacing-1-5);
+    outline: none;
+    width: 100%;
+    border-radius: var(--scm-ui-border-sm);
+}
+.input input.error
+{
+    border-color: var(--scm-ui-accent-red-muted);
+}
+.bigPastille
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--scm-ui-border-md);
+    padding: var(--scm-ui-spacing-2-5) var(--scm-ui-spacing-5);
+    height: fit-content;
+}
+.bigPastille p
+{
+    font-family: var(--scm-font-family), sans-serif;
+    font-size: var(--scm-ui-font-size-sm);
+    margin: 0;
+}
