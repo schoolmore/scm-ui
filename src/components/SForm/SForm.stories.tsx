@@ -16,6 +16,11 @@ import SDialogFooter from "../SDialog/SDialogFooter/SDialogFooter.js";
 import SDialogClose from "../SDialog/SDialogClose/SDialogClose.js";
 import SInfoCard from "../SInfoCard/SInfoCard.js";
 import useIsMobile from "../../hooks/useMobile.js";
+import SDropDown from "../SDropDown/SDropDown.js";
+import SDropDownTrigger from "../SDropDown/SDropDownTrigger/SDropDownTrigger.js";
+import SDropDownContent from "../SDropDown/SDropDownContent/SDropDownContent.js";
+import SDropDownItem from "../SDropDown/SDropDownItem/SDropDownItem.js";
+import SPastille from "../SPastille/SPastille.js";
 
 
 const meta = {
@@ -43,6 +48,14 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const classes = [
+    {id: "6eA", name: "6eme A", color: "#3b53ff"},
+    {id: "6eB", name: "6eme B", color: "#3044d6"},
+    {id: "6eC", name: "6eme C", color: "#4c58aa"},
+    {id: "5eA", name: "5eme A", color: "#e1005b"},
+    {id: "5eB", name: "5eme B", color: "#d25789"},
+    {id: "5eC", name: "5eme C", color: "#9a2655"},
+]
 
 export const Form : Story = {
     args : {
@@ -81,6 +94,21 @@ export const Form : Story = {
                     <SInput type={"email"} placeholder={"Tapez l'adresse e-mail de l'élève"} name={"email"}
                             icon={"alternate_email"} validate={validateEmail} />
                 </SField>
+                <SDropDown>
+                    <SDropDownTrigger>
+                        <SField label={"Classe de l'élève"}>
+                            <SInput placeholder={"Sélectionnez la classe de l'élève"} name="classe" icon="school" />
+                        </SField>
+                    </SDropDownTrigger>
+                    <SDropDownContent>
+                        {classes.map((c,i) => (
+                            <SDropDownItem value={c.id} text={c.name} key={i}>
+                                <SPastille color={c.color} />
+                                <p>{c.name}</p>
+                            </SDropDownItem>
+                        ))}
+                    </SDropDownContent>
+                </SDropDown>
                 <SButtonGroup>
                     <SButton variant={"secondary"} text={"Annuler"} />
                     <SButton variant={"primary"} text={"Valider"} formId={"t"} />

@@ -2,11 +2,11 @@
 {
     display: flex;
     align-items: center;
-    padding: var(--scm-ui-spacing-3) var(--scm-ui-spacing-1-5);
+    padding: var(--scm-ui-spacing-3) var(--scm-ui-spacing-2);
     cursor: pointer;
     transition: background-color .4s;
     background-color: var(--scm-ui-bg-background);
-    gap: 0 var(--scm-ui-spacing-1);
+    gap: 0 var(--scm-ui-spacing-2);
 }
 .item:hover
 {

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useEffect, useId, useState } from "react";
 import { SDropDownContext } from "../../context/SDropDown/SDropDownContext.js";
 
 
@@ -46,11 +46,27 @@ const SDropDown = ( {
         setSearchValue(v);
     }
 
+    const idElm : string = useId();
+    useEffect( () => {
+        if (!open) return;
+
+        const handleClick = (e: MouseEvent): void => {
+            const elm = document.getElementById(idElm);
+            if (elm && !elm.contains(e.target as Node)) toggle(false);
+        };
+
+        document.addEventListener("click", handleClick);
+        return () => document.removeEventListener("click", handleClick);
+
+    }, [idElm,toggle,open] );
+
     return (
         <SDropDownContext.Provider value={
             {toggle,isOpen:open,setValue:updatedValue,value,text,setText:updateText,register,values,searchUpdated,searchValue}
         }>
-            {children}
+            <span id={idElm}>
+                {children}
+            </span>
         </SDropDownContext.Provider>
     );
 

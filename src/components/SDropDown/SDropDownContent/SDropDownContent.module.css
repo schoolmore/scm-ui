@@ -1,3 +1,7 @@
+.contentPrt
+{
+    position: relative;
+}
 .content
 {
     display: flex;
@@ -8,4 +12,9 @@
     box-shadow: var(--scm-ui-drop-shadow-md);
     max-height: 40dvh;
     overflow: auto;
+    z-index: 4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
