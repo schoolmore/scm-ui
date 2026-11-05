@@ -7,12 +7,12 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    width: var(--scm-ui-sidebar-size);
+    width: fit-content;
     overflow: auto;
 }
 .sidebar img
 {
-    width: 5em;
+    width: 4em;
 }
 .first
 {

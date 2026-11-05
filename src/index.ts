@@ -100,6 +100,4 @@ export { default as SInnerSideBarTitle } from "./components/SSideBar/SInnerSideB
 export type { ISInnerSideBarTitle } from "./components/SSideBar/SInnerSideBar/SInnerSideBarTitle/SInnerSideBarTitle";
 export { default as SSideBarItem } from "./components/SSideBar/SSideBarItem/SSideBarItem";
 export type { ISSideBarItem } from "./components/SSideBar/SSideBarItem/SSideBarItem";
-export { default as SSideBarSection } from "./components/SSideBar/SSideBarSection/SSideBarSection";
-export type { ISSideBarSection } from "./components/SSideBar/SSideBarSection/SSideBarSection";
 export type { ISSideBarContext } from "./context/SSideBar/SSideBarContext";

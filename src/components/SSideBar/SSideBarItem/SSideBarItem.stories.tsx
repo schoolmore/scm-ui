@@ -7,7 +7,7 @@ const meta = {
     component   : SSideBarItem,
     tags        : ["autodocs"],
     args        : {
-        notif : 0, disabled : false, selected : false, name : "Catégorie"
+        disabled : false, selected : false, icon: "database",
     },
     parameters : {
         docs : {
@@ -25,11 +25,6 @@ export const Item : Story = {}
 export const ItemSelected : Story = {
     args : {
         selected : true,
-    }
-}
-export const ItemNotification : Story = {
-    args : {
-        notif : 42
     }
 }
 export const ItemDisabled : Story = {

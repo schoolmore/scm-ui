@@ -1,30 +1,25 @@
 import styles from "./SSideBarItem.module.css";
-import SNotificationIndicator from "../../SNotificationIndicator/SNotificationIndicator.js";
+import type { MaterialSymbol } from "material-symbols";
+import SMaterialSymbols from "../../SMaterialSymbols/SMaterialSymbols.js";
+
 
 export interface ISSideBarItem {
-    /** Nom de la catégorie */
-    name        : string,
     /** Indique si la catégorie est sélectionnée */
     selected?   : boolean,
     /** Indique si la catégorie est désactivée */
     disabled?   : boolean,
-    /** Nombre de notifications */
-    notif?      : number,
-    /** Indique si la barre de navigation est fermée */
-    collapsed?  : boolean,
+    /** Icône affichée sur l'item */
+    icon        : MaterialSymbol,
 }
 
 const SSideBarItem = ( {
-    name,selected=false,disabled=false,notif=0,collapsed=false,
+    selected=false,disabled=false,icon,
 }: ISSideBarItem ) => {
 
-    if (collapsed) return null;
-
     return (
-        <div aria-disabled={disabled} tabIndex={disabled?-1:0}
-                className={`${styles.item} ${disabled?styles.disabled:''} ${selected?styles.selected:''}`}>
-            <p>{name}</p>
-            <SNotificationIndicator size="xs" number={notif} />
+        <div tabIndex={disabled?-1:0} aria-disabled={disabled}
+            className={`${styles.item} ${selected?styles.selected:''} ${disabled?styles.disabled:''}`}>
+            <SMaterialSymbols icon={icon} size="lg" weight={"light"} />
         </div>
     );
 
