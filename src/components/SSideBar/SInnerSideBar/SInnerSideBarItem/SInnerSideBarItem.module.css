@@ -9,6 +9,15 @@
     transition: background-color .4s;
     position: relative;
     overflow: hidden;
+    width: 100%;
+    border: none;
+    font: inherit;
+    text-align: left;
+}
+.item:focus-visible
+{
+    outline: .15em solid var(--scm-ui-primary);
+    outline-offset: -.15em;
 }
 .item::before
 {
@@ -21,7 +30,7 @@
     left: -2em;
     transition: .4s ease-in-out;
 }
-.item:not(.disabled):hover, .item:not(.disabled):focus
+.item:not(.disabled):hover, .item:not(.disabled):focus-visible
 {
     background: var(--scm-ui-bg-ghost-active);
 }
@@ -53,7 +62,11 @@
 {
     color: var(--scm-ui-fg-muted);
 }
-.item:not(.selected):focus p
+.item:not(.selected):focus-visible p
 {
     font-weight: var(--scm-ui-font-weight-medium);
+}
+@media (prefers-reduced-motion: reduce)
+{
+    .item, .item::before { transition: none; }
 }

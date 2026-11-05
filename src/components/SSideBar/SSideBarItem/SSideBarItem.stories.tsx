@@ -7,7 +7,7 @@ const meta = {
     component   : SSideBarItem,
     tags        : ["autodocs"],
     args        : {
-        disabled : false, selected : false, icon: "database",
+        disabled : false, selected : false, icon: "database", label : "Notes et compétences",
     },
     parameters : {
         docs : {

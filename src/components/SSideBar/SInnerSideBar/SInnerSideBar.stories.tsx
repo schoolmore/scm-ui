@@ -9,6 +9,7 @@ const meta = {
     component   : SInnerSideBar,
     tags        : ["autodocs"],
     args        : {
+        label : "Notes et compétences",
     },
     argTypes : {
         children : {control : false},
@@ -30,10 +31,12 @@ export const SideBar : Story = {
     args : {
         children : <>
             <SInnerSideBarTitle title="Notes et compétences" />
-            <SInnerSideBarItem name="Ma moyenne" selected={true} />
-            <SInnerSideBarItem name="Dernières notes" notif={2} />
-            <SInnerSideBarItem name="Calculer ma moyenne" disabled={true} />
-            <SInnerSideBarItem name="Dernières compétences" />
+            <ul>
+                <li><SInnerSideBarItem name="Ma moyenne" selected={true} /></li>
+                <li><SInnerSideBarItem name="Dernières notes" notif={2} /></li>
+                <li><SInnerSideBarItem name="Calculer ma moyenne" disabled={true} /></li>
+                <li><SInnerSideBarItem name="Dernières compétences" /></li>
+            </ul>
         </>
     }
 }

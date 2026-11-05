@@ -1,0 +1,11 @@
+.main
+{
+    flex: 1;
+    min-width: 0;
+    height: 100dvh;
+    overflow: auto;
+}
+.main:focus
+{
+    outline: none;
+}

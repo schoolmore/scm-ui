@@ -24,12 +24,13 @@ const SInnerSideBarItem = ( {
     }
 
     return (
-        <div tabIndex={disabled?-1:0} onClick={handleClick} role={"button"}
+        <button type="button" disabled={disabled} onClick={handleClick}
+                aria-current={selected ? "page" : undefined}
                 className={`${styles.item} ${selected?styles.selected:''} ${disabled?styles.disabled:''}`}
         >
             <p>{name}</p>
             <SNotificationIndicator size="xs" number={notif} />
-        </div>
+        </button>
     );
 
 }

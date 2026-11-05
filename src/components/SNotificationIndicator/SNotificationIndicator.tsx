@@ -1,4 +1,5 @@
 import styles from "./SNotificationIndicator.module.css";
+import a11y from "../../styles/a11y.module.css";
 
 /** Tailles d'affichages disponibles pour les notifications */
 export type T_SNotificationIndicatorSize = "default" | "sm" | "xs";
@@ -24,7 +25,8 @@ const SNotificationIndicator = ( {
 
     return (
         <div className={`${styles.notification} ${styles[variant]} ${styles[size]}`}>
-            <p>{txtNotif}</p>
+            <p aria-hidden="true">{txtNotif}</p>
+            <span className={a11y.srOnly}>{number} notification{number > 1 ? "s" : ""}</span>
         </div>
     );
 

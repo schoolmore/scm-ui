@@ -91,7 +91,7 @@ export { default as useIsColorTooDark } from "./hooks/useColor";
 export { default as SNotificationIndicator } from "./components/SNotificationIndicator/SNotificationIndicator";
 export type { ISNotificationIndicator, T_SNotificationIndicatorSize, T_SNotificationIndicatorVariant } from "./components/SNotificationIndicator/SNotificationIndicator";
 export { default as SSideBar } from "./components/SSideBar/SSideBar";
-export type { ISSideBar } from "./components/SSideBar/SSideBar";
+export type { ISSideBar, ISideBarCreator, ISideBarOngletCreator } from "./components/SSideBar/SSideBar";
 export { default as SInnerSideBar } from "./components/SSideBar/SInnerSideBar/SInnerSideBar";
 export type { ISInnerSideBar } from "./components/SSideBar/SInnerSideBar/SInnerSideBar";
 export { default as SInnerSideBarItem } from "./components/SSideBar/SInnerSideBar/SInnerSideBarItem/SInnerSideBarItem";
@@ -101,3 +101,7 @@ export type { ISInnerSideBarTitle } from "./components/SSideBar/SInnerSideBar/SI
 export { default as SSideBarItem } from "./components/SSideBar/SSideBarItem/SSideBarItem";
 export type { ISSideBarItem } from "./components/SSideBar/SSideBarItem/SSideBarItem";
 export type { ISSideBarContext } from "./context/SSideBar/SSideBarContext";
+export { default as SScmApp } from "./components/SScmApp/SScmApp";
+export type { ISScmApp } from "./components/SScmApp/SScmApp";
+export { default as SMainApp } from "./components/SMainApp/SMainApp";
+export { useSideBar } from "./context/SSideBar/SSideBarContext";

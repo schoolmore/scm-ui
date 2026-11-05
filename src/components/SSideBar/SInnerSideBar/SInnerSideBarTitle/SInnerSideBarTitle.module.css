@@ -7,8 +7,9 @@
     border-bottom: .25em solid var(--scm-ui-primary);
     background-color: var(--scm-ui-bg-inner-sidebar);
 }
-.title p
+.title h2
 {
+    margin: 0;
     font-family: var(--scm-font-family), sans-serif;
     font-size: var(--scm-ui-font-size-lg);
     font-weight: var(--scm-ui-font-weight-medium);

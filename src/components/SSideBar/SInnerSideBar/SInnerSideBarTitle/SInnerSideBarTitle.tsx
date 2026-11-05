@@ -14,7 +14,7 @@ const SInnerSideBarTitle = ( {
 
     return (
         <div className={styles.title}>
-            <p>{title}</p>
+            <h2>{title}</h2>
             <SNotificationIndicator number={notif} />
         </div>
     );

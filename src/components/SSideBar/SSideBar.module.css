@@ -23,7 +23,38 @@
 }
 .content
 {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     gap: var(--scm-ui-spacing-2);
+}
+.wrapper
+{
+    position: relative;
+    display: flex;
+    height: 100dvh;
+    flex-shrink: 0;
+}
+
+/** Lien d'évitement, visible uniquement au focus clavier */
+.skipLink
+{
+    position: absolute;
+    top: var(--scm-ui-spacing-2);
+    left: var(--scm-ui-spacing-2);
+    z-index: 10;
+    padding: var(--scm-ui-spacing-2) var(--scm-ui-spacing-3);
+    border-radius: var(--scm-ui-border-md);
+    background: var(--scm-ui-primary);
+    color: var(--scm-ui-fg-secondary);
+    font-family: var(--scm-font-family), sans-serif;
+    transform: translateY(-200%);
+}
+.skipLink:focus
+{
+    transform: none;
+    outline: .15em solid var(--scm-ui-fg-primary);
+    outline-offset: .15em;
 }
