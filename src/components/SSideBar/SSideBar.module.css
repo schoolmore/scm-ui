@@ -2,6 +2,7 @@
 {
     background-color: var(--scm-ui-bg-sidebar);
     height: 100dvh;
+    box-sizing: border-box;
     padding: var(--scm-ui-spacing-11) var(--scm-ui-spacing-3-5);
     display: flex;
     align-items: center;
