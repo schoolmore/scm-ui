@@ -24,3 +24,20 @@ type Story = StoryObj<typeof meta>;
 export const Onglet : Story = {
     args : {}
 }
+
+export const OngletSelected : Story = {
+    args : {
+        selected : true
+    }
+}
+export const OngletNotification : Story = {
+    args : {
+        notif : 99
+    }
+}
+
+export const OngletDisabled : Story = {
+    args: {
+        disabled : true,
+    }
+}

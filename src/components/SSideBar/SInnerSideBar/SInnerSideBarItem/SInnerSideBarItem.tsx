@@ -10,10 +10,12 @@ export interface ISInnerSideBarItem {
     disabled?   : boolean,
     /** Au clic sur l'onglet */
     onClick?    : () => void,
+    /** Indique si l'onglet est actif */
+    selected?   : boolean,
 }
 
 const SInnerSideBarItem = ( {
-    name,notif=0,disabled=false,onClick
+    name,notif=0,disabled=false,onClick,selected=false,
 }: ISInnerSideBarItem ) => {
 
     const handleClick = () : void => {
@@ -22,9 +24,11 @@ const SInnerSideBarItem = ( {
     }
 
     return (
-        <div tabIndex={disabled?-1:0} onClick={handleClick} role={"button"} className={`${styles.item}`}>
+        <div tabIndex={disabled?-1:0} onClick={handleClick} role={"button"}
+                className={`${styles.item} ${selected?styles.selected:''} ${disabled?styles.disabled:''}`}
+        >
             <p>{name}</p>
-            <SNotificationIndicator number={notif} />
+            <SNotificationIndicator size="xs" number={notif} />
         </div>
     );
 

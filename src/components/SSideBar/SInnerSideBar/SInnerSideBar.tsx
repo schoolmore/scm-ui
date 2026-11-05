@@ -1,11 +1,19 @@
-export interface ISInnerSideBar {
+import * as React from "react";
+import styles from "./SInnerSideBar.module.css";
 
+export interface ISInnerSideBar {
+    /** Onglets */
+    children    : React.ReactNode,
 }
 
-const SInnerSideBar = ( {}: ISInnerSideBar ) => {
+const SInnerSideBar = ( {
+    children,
+}: ISInnerSideBar ) => {
 
     return (
-        <div></div>
+        <nav className={styles.innerSideBar}>
+            {children}
+        </nav>
     );
 
 }

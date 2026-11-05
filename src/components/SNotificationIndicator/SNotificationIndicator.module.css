@@ -22,7 +22,7 @@
 }
 .primary p
 {
-    color: var(--scm-ui-fg-secondary);
+    color: var(--scm-ui-fg-secondary) !important;
 }
 .secondary
 {
@@ -30,7 +30,7 @@
 }
 .secondary p
 {
-    color: var(--scm-ui-primary);
+    color: var(--scm-ui-primary) !important;
 }
 
 /*** Tailles */

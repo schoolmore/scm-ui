@@ -1,0 +1,29 @@
+.sidebar
+{
+    background-color: var(--scm-ui-bg-sidebar);
+    height: 100dvh;
+    padding: var(--scm-ui-spacing-11) var(--scm-ui-spacing-3-5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: var(--scm-ui-sidebar-size);
+    overflow: auto;
+}
+.sidebar img
+{
+    width: 5em;
+}
+.first
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--scm-ui-spacing-12);
+}
+.content
+{
+    display: flex;
+    flex-direction: column;
+    gap: var(--scm-ui-spacing-2);
+}

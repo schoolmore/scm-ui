@@ -1,0 +1,10 @@
+.innerSideBar
+{
+    display: flex;
+    flex-direction: column;
+    background: var(--scm-ui-bg-inner-sidebar);
+    height: 100dvh;
+    width: var(--scm-ui-sidebar-size);
+    margin: 0;
+    overflow: auto;
+}

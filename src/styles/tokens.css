@@ -102,4 +102,7 @@
   --scm-ui-drop-shadow-md       : 0 3px 3px rgb(0 0 0 / 0.12);
   --scm-ui-drop-shadow-lg       : 0 4px 4px rgb(0 0 0 / 0.15);
   --scm-ui-drop-shadow-xl       : 0 9px 7px rgb(0 0 0 / 0.1);
+
+  /** Taille de la sidebar de navigation */
+  --scm-ui-sidebar-size         : 12dvw;
 }
