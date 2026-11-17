@@ -70,8 +70,8 @@ export { default as SField } from "./components/SField/SField"
 export type { ISField } from "./components/SField/SField"
 export type { ISFieldContext } from "./context/SField/SFieldContext"
 export { default as useIsMobile } from "./hooks/useMobile";
-export { default as SGrid } from "./components/SGrid/SGrid";
-export type { ISGrid } from "./components/SGrid/SGrid";
+export { default as SGrid } from "./layout/SGrid/SGrid";
+export type { ISGrid } from "./layout/SGrid/SGrid";
 export { default as SDropDown } from "./components/SDropDown/SDropDown";
 export type { ISDropDown } from "./components/SDropDown/SDropDown";
 export { default as SDropDownTrigger } from "./components/SDropDown/SDropDownTrigger/SDropDownTrigger";
@@ -105,3 +105,9 @@ export { default as SScmApp } from "./components/SScmApp/SScmApp";
 export type { ISScmApp } from "./components/SScmApp/SScmApp";
 export { default as SMainApp } from "./components/SMainApp/SMainApp";
 export { useSideBar } from "./context/SSideBar/SSideBarContext";
+export { default as SLoadingSpinner } from "./components/SLoadingSpinner/SLoadingSpinner";
+export type { ISLoadingSpinner, T_SLoadingSpinnerSize, T_SLoadingSpinnerVariant } from "./components/SLoadingSpinner/SLoadingSpinner";
+export { default as SCenter } from "./layout/SCenter/SCenter";
+export type { ISCenter, T_SCenterGap } from "./layout/SCenter/SCenter";
+export { default as SLoadingDialog } from "./components/SLoadingDialog/SLoadingDialog";
+export type { ISLoadingDialog } from "./components/SLoadingDialog/SLoadingDialog";

@@ -8,7 +8,7 @@ const meta = {
     title     : "Components/SButton",
     component : SButton,
     tags      : ["autodocs"],
-    args      : { text : "Bouton", size: "default", disabled : false},
+    args      : { text : "Bouton", size: "default", disabled : false,isLoading:false,},
     argTypes  : {
         frontIcon   : {type: "string"},
         backIcon    : {type: "string"},
@@ -63,7 +63,7 @@ const headerStyle : CSSProperties = { display: "flex", alignItems: "center", jus
 
 export const Sizes : Story = {
     args       : { variant : "primary" },
-    parameters : { controls : { include : ["text", "disabled"] } },
+    parameters : { controls : { include : ["text", "disabled","isLoading"] } },
     render     : (args) => (
         <div style={gridStyle(sizes.length)}>
             {sizes.map(size => <div key={size} style={headerStyle}><p>{size}</p></div>)}
@@ -78,7 +78,7 @@ export const Sizes : Story = {
 
 export const Icons : Story = {
     args        : { variant : "primary" },
-    parameters  : { controls : { include : ["text", "disabled","frontIcon","backIcon"] } },
+    parameters  : { controls : { include : ["text", "disabled","frontIcon","backIcon","isLoading"] } },
     render      : (args) => (
         <div style={gridStyle(sizes.length * iconPlacements.length)}>
             {sizes.flatMap(size => iconPlacements.map((_, i) => (
@@ -87,6 +87,21 @@ export const Icons : Story = {
             {variants.flatMap(variant => sizes.flatMap(size => iconPlacements.map((icons, i) => (
                 <SButton key={`${variant}-${size}-${i}`} {...args} {...icons} variant={variant} size={size} />
             ))))}
+        </div>
+    ),
+};
+
+export const Loading : Story = {
+    args       : { variant : "primary", isLoading: true },
+    parameters : { controls : { include : ["text", "disabled"] } },
+    render     : (args) => (
+        <div style={gridStyle(sizes.length)}>
+            {sizes.map(size => <div key={size} style={headerStyle}><p>{size}</p></div>)}
+            {variants.map((variant) =>
+                sizes.map((size) => (
+                    <SButton key={`${variant}-${size}`} {...args} variant={variant} size={size} />
+                ))
+            )}
         </div>
     ),
 };

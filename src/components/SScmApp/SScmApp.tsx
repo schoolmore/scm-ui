@@ -3,6 +3,7 @@ import { useId, useState } from "react";
 import styles from "./SScmApp.module.css";
 import { SSideBarContext } from "../../context/SSideBar/SSideBarContext.js";
 import type { ISideBarCreator, ISideBarOngletCreator } from "../SSideBar/SSideBar.js";
+import { SLoadingDialogContext } from "../../context/SLoadingDialog/SLoadingDialogContext.js";
 
 export interface ISScmApp {
     /** Contenu de l'application (SSideBar et SMainApp) */
@@ -16,6 +17,23 @@ const firstEnabled = <T extends { disabled? : boolean }>(list : T[]) : T | undef
 const SScmApp = ( {
     children,
 }: ISScmApp ) => {
+
+    /** Loading dialog **/
+    const [isLoadingOpen, setIsLoadingOpen] = useState<boolean>(false);
+    const [titleLoading, setTitleLoading] = useState<string>("Chargement en cours ...");
+    const [descrLoading, setDescrLoading] = useState<string|undefined>(undefined);
+
+    /**
+     * Modifier la valeur d'ouverture du dialogue
+     * Remettre à 0 les valeurs des titres et description du modal
+     * @param {boolean} v
+     */
+    const toggleDialogLoading = (v : boolean) : void => {
+        setIsLoadingOpen(v);
+        if (v) return;
+        setTitleLoading("Chargement en cours ...");
+        setDescrLoading(undefined);
+    }
 
     const [items, setItems] = useState<ISideBarCreator[]>([]);
     const [itemId, setItemId] = useState<string | undefined>(undefined);
@@ -45,9 +63,14 @@ const SScmApp = ( {
 
     return (
         <SSideBarContext.Provider value={{ items, setItems, activeItem, activeTab, selectItem, selectTab, mainId }}>
-            <div className={styles.app}>
-                {children}
-            </div>
+            <SLoadingDialogContext.Provider value={{
+                isOpen: isLoadingOpen, toggle : toggleDialogLoading,description: descrLoading, title: titleLoading,
+                setDescription: setDescrLoading, setTitle: setTitleLoading
+            }}>
+                <div className={styles.app}>
+                    {children}
+                </div>
+            </SLoadingDialogContext.Provider>
         </SSideBarContext.Provider>
     );
 

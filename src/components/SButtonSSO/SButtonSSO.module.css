@@ -18,12 +18,17 @@
     font-size: var(--scm-ui-font-size-lg);
     font-weight: var(--scm-ui-font-weight-normal);
 }
-.button:not(.disabled):hover
+.button:not(.disabled, .loading):hover
 {
     transform: scale(1.05);
 }
 .disabled
 {
     opacity: .2;
+    cursor: default;
+}
+.loading
+{
+    opacity: .4;
     cursor: default;
 }

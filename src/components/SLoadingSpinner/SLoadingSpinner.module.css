@@ -1,0 +1,61 @@
+.loading
+{
+    width: calc(36 * var(--size));
+    height: calc(36 * var(--size));
+    border-color: var(--scm-ui-primary);
+    border: calc(4 * var(--size)) solid;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation .8s linear infinite;
+}
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/** Variantes **/
+.loading.primary
+{
+    border-color: var(--scm-ui-secondary);
+    border-bottom-color: var(--scm-ui-primary);
+}
+.loading.secondary
+{
+    border-color: var(--scm-ui-primary);
+    border-bottom-color: var(--scm-ui-secondary);
+}
+
+/** Tailles **/
+.loading.xxl
+{
+    --size: 2.5px;
+}
+.loading.xl
+{
+    --size: 2px;
+}
+.loading.lg
+{
+    --size: 1.6px
+}
+.loading.default
+{
+    --size: 1px
+}
+.loading.sm
+{
+    --size: 0.7px;
+}
+.loading.xs
+{
+    --size: 0.5px;
+}
+.loading.xxs
+{
+    --size: 0.3px;
+}

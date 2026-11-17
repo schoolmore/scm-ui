@@ -1,0 +1,21 @@
+.center
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+/** Espacement **/
+.center.lg
+{
+    gap: var(--scm-ui-spacing-3);
+}
+.center.default
+{
+    gap: var(--scm-ui-spacing-2);
+}
+.center.sm
+{
+    gap: var(--scm-ui-spacing-1);
+}

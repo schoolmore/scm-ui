@@ -8,7 +8,7 @@ const meta = {
     component   : SButtonSSO,
     tags        : ["autodocs"],
     args        : {
-
+        isLoading: false,
     },
     parameters : {
         docs : {
@@ -29,5 +29,10 @@ export const Action : Story = {
             console.log("onClick ", e);
             action("onClick")({name:  "onClick", text : e.currentTarget.textContent, type : e.type});
         }
+    }
+}
+export const Loading : Story = {
+    args : {
+        isLoading:true,
     }
 }

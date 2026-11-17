@@ -11,7 +11,7 @@ const styleRect : React.CSSProperties = {
 
 
 const meta = {
-    title       : "Components/SGrid",
+    title       : "Layout/SGrid",
     component   : SGrid,
     tags        : ["autodocs"],
     args        : {

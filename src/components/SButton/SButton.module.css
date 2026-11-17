@@ -17,7 +17,7 @@
     background: var(--scm-ui-primary);
     color : var(--scm-ui-fg-secondary);
 }
-.button.primary:not(.disabled):hover
+.button.primary:not(.disabled, .loading):hover
 {
     background: var(--scm-ui-primary-active);
 }
@@ -29,7 +29,7 @@
     background: var(--scm-ui-secondary);
     color : var(--scm-ui-primary);
 }
-.button.secondary:not(.disabled):hover
+.button.secondary:not(.disabled, .loading):hover
 {
     background: var(--scm-ui-secondary-active);
     color: var(--scm-ui-primary-active);
@@ -44,7 +44,7 @@
     color: var(--scm-ui-primary);
     border: 2px solid var(--scm-ui-primary);
 }
-.button.outline:not(.disabled):hover
+.button.outline:not(.disabled, .loading):hover
 {
     background: var(--scm-ui-bg-ghost-active);
 }
@@ -57,7 +57,7 @@
     background: var(--scm-ui-bg-background);
     color: var(--scm-ui-primary);
 }
-.button.ghost:not(.disabled):hover
+.button.ghost:not(.disabled, .loading):hover
 {
     background: var(--scm-ui-bg-ghost-active);
 }
@@ -65,50 +65,56 @@
 {
     color: var(--scm-ui-fg-muted);
 }
+.button.loading
+{
+    opacity: .4;
+    cursor: default;
+}
 
 
 .button.lg
 {
-    gap: var(--scm-ui-spacing-3-5);
+    gap: var(--scm-ui-spacing-2-5);
     padding: var(--scm-ui-spacing-3) var(--scm-ui-spacing-6);
     border-radius: var(--scm-ui-border-md);
     font-size: var(--scm-ui-font-size-lg);
 }
-/*.button.lg span
-{
-    font-size: var(--scm-ui-font-size-xl);
-}*/
 .button.default
 {
-    gap: var(--scm-ui-spacing-3);
+    gap: var(--scm-ui-spacing-2);
     padding: var(--scm-ui-spacing-2-5) var(--scm-ui-spacing-5);
     border-radius: var(--scm-ui-border-md);
     font-size: var(--scm-ui-font-size-base);
 }
-/*.button.md span
-{
-    font-size: var(--scm-ui-font-size-lg);
-}*/
 .button.sm
 {
-    gap: var(--scm-ui-spacing-2);
+    gap: var(--scm-ui-spacing-1);
     padding: var(--scm-ui-spacing-2) var(--scm-ui-spacing-4);
     border-radius: var(--scm-ui-border-sm);
     font-size: var(--scm-ui-font-size-sm);
 }
-/*.button.sm span
-{
-    font-size: var(--scm-ui-font-size-base);
-}*/
 .button.xs
 {
-    gap: var(--scm-ui-spacing-1);
+    gap: var(--scm-ui-spacing-0-5);
     padding: var(--scm-ui-spacing-1) var(--scm-ui-spacing-2);
     border-radius: var(--scm-ui-border-sm);
     font-size: var(--scm-ui-font-size-xs);
 }
-/*
-.button.xs span
+
+/** Si icone **/
+.button.lg.icon
 {
-    font-size: var(--scm-ui-font-size-sm);
-}*/
+    padding: var(--scm-ui-spacing-3) var(--scm-ui-spacing-4);
+}
+.button.default.icon
+{
+    padding: var(--scm-ui-spacing-2-5) var(--scm-ui-spacing-3);
+}
+.button.sm.icon
+{
+    padding: var(--scm-ui-spacing-2) var(--scm-ui-spacing-2);
+}
+.button.xs.icon
+{
+    padding: var(--scm-ui-spacing-1) var(--scm-ui-spacing-0-5);
+}
