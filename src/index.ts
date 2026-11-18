@@ -119,3 +119,6 @@ export type { ISToastContext } from "./context/SToast/SToastContext";
 export { useToast } from "./context/SToast/SToastContext";
 export { default as SToastClose } from "./components/SToast/SToastClose/SToastClose";
 export type { ISToastClose } from "./components/SToast/SToastClose/SToastClose";
+export { default as SToaster } from "./components/SToaster/SToaster";
+export { toastStore, toast } from "./context/SToast/toastStore";
+export type { IToast } from "./context/SToast/toastStore";

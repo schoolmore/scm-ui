@@ -12,6 +12,8 @@
     box-shadow: var(--scm-ui-drop-shadow-md);
     --color-toast: var(--scm-ui-bg-muted);
     --icon-toast: "\eb8b";
+    flex: none;
+    box-sizing: border-box;
 }
 .start
 {
