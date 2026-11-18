@@ -1,36 +1,22 @@
-# Scm-ui 0.0.7
+# Scm-ui 0.0.8
 ## Nouvelle version mineure
 
 ---
 
-### SButton
-
-- Ajout d'un état de chargement aux boutons
-- Ajout du style personnalisé pour les boutons
-- Correction de l'espace des boutons avec icône
-
-### SLoadingSpinner
-
-- Ajout du composant `SLoadingSpinner` indiquant un chargement
-- Plusieurs tailles sont disponibles : XXL -> XXS
-- Plusieurs variantes sont disponibles : Primary, Secondary
-
-### SGrid
-
-- Changement de dossier de `Components` vers `Layout`
-
-### SCenter
-
-- Ajout de composant permettant de center les éléments dans `Layout`
-- Taille d'espacement personnalisable
-
-### SButtonSSO
-
-- Ajout d'un état de chargement du bouton
-- Possibilité de modifier le texte d'affichage du bouton
-
 ### SLoadingDialog
 
-- Création du composant permettant de bloquer l'utilisateur pendant un chargement
-- Possibilité de personnaliser le titre et la description du chargement via le contexte
-- Ajout au composant `ScmApp` du provider dialogue
+- Adaptation du dialogue pour l'affichage mobile
+
+### SMaterialSymbols
+
+- Ajout d'une action `onClick` sur l'icône
+
+### SToast
+
+- Ajout du composant SToast pour afficher un retour sur les actions des utilisateurs
+- Plusieurs variantes : `Info`, `Success`, `Danger`, `Warning` et `Delete`
+
+### SToastClose
+
+- Composant permettant de commander la fermeture du parent grâce à une action enfant
+- Vérification de l'autorisation de fermeture possible

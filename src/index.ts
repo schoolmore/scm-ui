@@ -111,3 +111,11 @@ export { default as SCenter } from "./layout/SCenter/SCenter";
 export type { ISCenter, T_SCenterGap } from "./layout/SCenter/SCenter";
 export { default as SLoadingDialog } from "./components/SLoadingDialog/SLoadingDialog";
 export type { ISLoadingDialog } from "./components/SLoadingDialog/SLoadingDialog";
+export { default as SToast } from "./components/SToast/SToast";
+export type { ISToast, T_SToastVariant } from "./components/SToast/SToast";
+export type { ISLoadingDialogContext } from "./context/SLoadingDialog/SLoadingDialogContext";
+export { useLoadingDialog } from "./context/SLoadingDialog/SLoadingDialogContext"
+export type { ISToastContext } from "./context/SToast/SToastContext";
+export { useToast } from "./context/SToast/SToastContext";
+export { default as SToastClose } from "./components/SToast/SToastClose/SToastClose";
+export type { ISToastClose } from "./components/SToast/SToastClose/SToastClose";

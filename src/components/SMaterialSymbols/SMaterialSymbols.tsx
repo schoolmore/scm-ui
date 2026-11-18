@@ -1,6 +1,7 @@
 import type { MaterialSymbol } from "material-symbols";
 import styles from './SMaterialSymbols.module.css';
 import 'material-symbols';
+import * as React from "react";
 
 /** Taille disponible pour l'affiche d'une icône */
 export type T_SMaterialSymbolsSize = "xxl" | "xl" | "lg" | "default" | "sm" | "xs";
@@ -9,25 +10,28 @@ export type T_SMaterialSymbolsWeight = "extrabold" | "bold" | "semibold" | "medi
 
 export interface ISMaterialSymbols {
     /** Icône affichée */
-    icon    : MaterialSymbol,
+    icon        : MaterialSymbol,
     /** Taille d'affichage de l'icône */
-    size?   : T_SMaterialSymbolsSize,
+    size?       : T_SMaterialSymbolsSize,
     /** Indique si l'icône doit être remplie ou non */
-    fill?   : boolean,
+    fill?       : boolean,
     /** Couleur d'affichage de l'icône */
-    color?  : string,
+    color?      : string,
     /** Graisse de l'icône, par défaut medium */
-    weight? : T_SMaterialSymbolsWeight,
+    weight?     : T_SMaterialSymbolsWeight,
+    /** Méthode exécutée au clic sur l'icône */
+    onClick?    : (e : React.MouseEvent) => void,
 }
 
 const SMaterialSymbols = ( {
-        icon,size="default",fill=false,color="#000",weight="normal"
+        icon,size="default",fill=false,color="#000",weight="normal",onClick,
 }: ISMaterialSymbols ) => {
 
     return (
         <span
             aria-hidden="true"
             style={{color}}
+            onClick={onClick}
             className={`material-symbols-rounded ${styles.icon} ${styles[size]} ${fill?styles.fill:''} ${styles[weight]}`}
         >
             {icon}
