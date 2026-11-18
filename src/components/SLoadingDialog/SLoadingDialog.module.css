@@ -36,4 +36,16 @@
     font-size: var(--scm-ui-font-size-sm);
     font-weight: var(--scm-ui-font-weight-light);
     color: var(--scm-ui-fg-muted);
+    text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+    .loading {
+        width: 55dvw;
+        gap: var(--scm-ui-spacing-8);
+        padding: var(--scm-ui-spacing-8) var(--scm-ui-spacing-6);
+    }
+    .loading h1 {
+        font-size: var(--scm-ui-font-size-lg);
+    }
 }

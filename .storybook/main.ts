@@ -16,5 +16,7 @@ const config: StorybookConfig = {
   ],
   "framework": "@storybook/react-vite",
   staticDirs : ["../public"],
+    managerHead: (head) =>
+        `${head}<link rel="shortcut icon" href="../public/scm-ui.svg">`
 };
 export default config;
