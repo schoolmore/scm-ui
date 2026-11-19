@@ -14,6 +14,8 @@
     --icon-toast: "\eb8b";
     flex: none;
     box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
 }
 .start
 {
@@ -92,4 +94,17 @@
 {
     --color-toast: var(--scm-ui-accent-red-muted);
     --icon-toast: "\e872"
+}
+
+@media screen and (max-width: 500px) {
+    .toast {
+        cursor: pointer;
+        box-shadow: var(--scm-ui-drop-shadow-lg);
+    }
+    .details h1 {
+        font-size: var(--scm-ui-font-size-sm);
+    }
+    .details p {
+        font-size: var(--scm-ui-font-size-xs);
+    }
 }

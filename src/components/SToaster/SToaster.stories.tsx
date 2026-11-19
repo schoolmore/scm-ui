@@ -52,3 +52,16 @@ export const Toaster : Story = {
         </SScmApp>
     )
 }
+
+export const Mobile : Story = {
+    globals: {
+        viewport: { value: 'mobile2', isRotated: false },
+    },
+    render: () => (
+        <SScmApp>
+            <div>
+                <ButtonToast />
+            </div>
+        </SScmApp>
+    ),
+}

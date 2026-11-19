@@ -12,3 +12,19 @@
     flex-direction: column;
     z-index: 5;
 }
+
+@media screen and (max-width: 500px) {
+    .toaster {
+        right: auto;
+        left: 0;
+        width: 100%;
+        max-height: 25dvh;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .toaster {
+        width: 40dvw;
+    }
+}

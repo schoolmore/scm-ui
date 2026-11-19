@@ -33,6 +33,7 @@
 .loading p
 {
     margin: 0;
+    font-family: var(--scm-font-family), sans-serif;
     font-size: var(--scm-ui-font-size-sm);
     font-weight: var(--scm-ui-font-weight-light);
     color: var(--scm-ui-fg-muted);

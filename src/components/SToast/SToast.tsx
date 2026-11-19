@@ -4,6 +4,7 @@ import SMaterialSymbols from "../SMaterialSymbols/SMaterialSymbols.js";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { SToastContext } from "../../context/SToast/SToastContext.js";
+import useIsMobile from "../../hooks/useMobile.js";
 
 /** Type disponible pour le toast */
 export type T_SToastVariant = "info" | "success" | "error" | "delete" | "warning";
@@ -28,6 +29,12 @@ const SToast = ( {
 }: ISToast ) => {
 
     const [isShown, setIsShown] = useState<boolean>(true);
+    const isMobile : boolean = useIsMobile();
+
+    const closeIfMobile = () : void => {
+        if (!isMobile) return;
+        closeToast();
+    }
 
     const closeToast = () : void => {
         setIsShown(false);
@@ -47,14 +54,14 @@ const SToast = ( {
         <SToastContext value={{close : closeToast}}>
             <AnimatePresence>
                 {isShown&&(
-                    <motion.div animate={{opacity: 1}} initial={{opacity: 0}} exit={{opacity:0}} className={`${styles.toast} ${styles[variant]}`}>
+                    <motion.div onClick={closeIfMobile} animate={{opacity: 1}} initial={{opacity: 0}} exit={{opacity:0}} className={`${styles.toast} ${styles[variant]}`}>
                         <div className={styles.start}>
                             <div className={styles.details}>
                                 <h1>{title}</h1>
                                 {details&&<p>{details}</p>}
                             </div>
                         </div>
-                        {!children&&(
+                        {(!children&&!isMobile)&&(
                             <div className={styles.close} onClick={closeToast}>
                                 <SMaterialSymbols size="sm" color="var(--scm-ui-fg-muted)"
                                                     icon="close" />

@@ -6,6 +6,7 @@
 ### SLoadingDialog
 
 - Adaptation du dialogue pour l'affichage mobile
+- Correction de la police du commentaire
 
 ### SMaterialSymbols
 
