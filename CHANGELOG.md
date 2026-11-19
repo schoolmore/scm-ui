@@ -21,3 +21,11 @@
 
 - Composant permettant de commander la fermeture du parent grâce à une action enfant
 - Vérification de l'autorisation de fermeture possible
+
+### SSelectionCard
+
+- Ajout du composant de carte de sélection
+
+### SCheckbox, SRadioButton
+
+- Ajout de la prise en charge des cartes parents
