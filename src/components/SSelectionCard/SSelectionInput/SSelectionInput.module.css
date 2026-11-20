@@ -1,0 +1,6 @@
+.section
+{
+    display: flex;
+    flex-direction: column;
+    gap: var(--scm-ui-spacing-1-5);
+}

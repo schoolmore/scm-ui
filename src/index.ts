@@ -124,5 +124,5 @@ export { toastStore, toast } from "./context/SToast/toastStore";
 export type { IToast } from "./context/SToast/toastStore";
 export { default as SSelectionCard } from "./components/SSelectionCard/SSelectionCard";
 export type { ISSelectionCard } from "./components/SSelectionCard/SSelectionCard";
-export type { ISSelectionCardContext } from "./context/SSelectionCard/SSelectionCardContext";
-export { useSelectionCard } from "./context/SSelectionCard/SSelectionCardContext";
+export { default as SSelectionInput } from "./components/SSelectionCard/SSelectionInput/SSelectionInput";
+export type { ISSelectionInput, ISSelectionInputValue } from "./components/SSelectionCard/SSelectionInput/SSelectionInput";

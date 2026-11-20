@@ -16,10 +16,12 @@ export interface ISRadioButtonItem {
     focusable?  : boolean,
     /** Référence du groupe parent */
     ref?        : React.Ref<HTMLDivElement>,
+    /** Afficher le label à côté de la pastille */
+    showLabel?  : boolean,
 }
 
 const SRadioButtonItem = ( {
-    value,disabled = false,selected=false,onClick,focusable=false,ref,
+    value,disabled = false,selected=false,onClick,focusable=false,ref,showLabel=true,
 }: ISRadioButtonItem ) => {
 
     const triggeredClick = () : void => {
@@ -37,11 +39,13 @@ const SRadioButtonItem = ( {
 
     return (
         <div aria-disabled={disabled} role="radio" aria-checked={selected} ref={ref}
-                aria-labelledby={idLabel} tabIndex={focusable && !disabled?0:-1}
+                aria-labelledby={idLabel} tabIndex={(focusable && !disabled)?0:-1}
                 onKeyDown={onKeyDonw} onClick={triggeredClick}
                 className={`${styles.rb} ${disabled?styles.disabled:''} ${selected?styles.checked:''}`}>
             <div id={idElm} className={styles.rbContent}></div>
-            <label id={idLabel} htmlFor={idElm}>{value}</label>
+            {showLabel&&(
+                <label id={idLabel} htmlFor={idElm}>{value}</label>
+            )}
         </div>
     );
 

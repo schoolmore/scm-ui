@@ -11,9 +11,27 @@
 }
 .card p
 {
+    font-family: var(--scm-font-family), sans-serif;
     margin: 0;
+    color: var(--scm-ui-fg-primary);
 }
-.card:hover
+.card:not(.selected, .disabled):hover
 {
     background-color: var(--scm-ui-bg-muted-active);
+}
+.selected
+{
+    background-color: var(--scm-ui-secondary);
+}
+.selected p
+{
+    font-weight: var(--scm-ui-font-weight-semibold);
+}
+.disabled
+{
+    cursor: not-allowed;
+}
+.disabled p
+{
+    color: var(--scm-ui-fg-muted);
 }

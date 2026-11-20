@@ -1,7 +1,8 @@
-import SCheckbox, { type T_SCheckboxSize } from "./SCheckbox.js";
+import SCheckbox, { type T_SCheckboxSize, type T_SCheckboxState } from "./SCheckbox.js";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import type { CSSProperties } from "react";
+import { type CSSProperties, useState } from "react";
 import { action } from "storybook/actions";
+import SToggleButton from "../SToggleButton/SToggleButton.js";
 
 
 const meta = {
@@ -9,7 +10,7 @@ const meta = {
     component   : SCheckbox,
     tags        : ["autodocs"],
     args        : {
-        label       : "Autoriser la connexion à l'espace parent", state : "off", size : "default",name:"connect",
+        label       : "Autoriser la connexion à l'espace parent", defaultState : "off", size : "default",name:"connect",
     },
     parameters : {
         docs : {
@@ -26,21 +27,49 @@ type Story = StoryObj<typeof meta>;
 export const Checkbox : Story = {}
 export const CheckboxIndetermindate : Story = {
     args : {
-        state : "indeterminate",
+        defaultState : "indeterminate",
     }
 }
 export const CheckboxDisabled : Story = {
     args : {
-        state : "on", disabled : true,
+        defaultState : "on", disabled : true,
     }
 }
 
 export const CheckboxAction : Story = {
     args : {
-        state: "off", onChange : (v) => {
+        defaultState: "off", onChange : (v) => {
             console.log("Changement checkbox ", v);
             action("onChange")(v);
         }
+    }
+}
+
+export const Controlled : Story = {
+    args : {
+        state: "on",
+    },
+    render: (args) => {
+
+        const [state, setState] = useState<T_SCheckboxState>("off");
+
+        const editStatus = (n : number[]) : void => {
+            console.log(n);
+            if (n.length === 0) setState("off");
+            else setState("on");
+        }
+
+        return (
+            <>
+                <SCheckbox {...args} state={state} />
+                <SToggleButton onClick={editStatus} toggles={[
+                    {
+                        texte: "Activer",
+                    }
+                ]} />
+            </>
+        )
+
     }
 }
 
@@ -56,8 +85,8 @@ const dispCenter : CSSProperties = { display: "flex", alignItems: "center", just
 
 
 export const Sizes : Story = {
-    args : {state :"on"},
-    parameters: {controls: {include : ["label","disabled","state"]}},
+    args : {defaultState :"on"},
+    parameters: {controls: {include : ["label","disabled","defaultState"]}},
     render : (args) => (
         <div style={gridStyle(sizes.length)}>
             {sizes.map(s => (<div key={s} style={dispCenter}><p>{s}</p></div>))}

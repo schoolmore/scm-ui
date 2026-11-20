@@ -16,10 +16,10 @@ const meta = {
                 selected    : true,
             },
             {
-                texte   : "Séance modifiées",
+                texte   : "Séances modifiées",
             },
             {
-                texte   : "Séance supprimée"
+                texte   : "Séances supprimées"
             },
             {
                 texte   : "Séance à placer"
