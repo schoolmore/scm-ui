@@ -1,7 +1,8 @@
 import styles from "./SSelectionInput.module.css";
 import SSelectionCard from "../SSelectionCard.js";
 import { SSelectionInputContext } from "../../../context/SSelectionInput/SSelectionInputContext.js";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+
 
 export interface ISSelectionInputValue {
     /** Couleur de la ressource */
