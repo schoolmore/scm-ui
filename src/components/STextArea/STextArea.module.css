@@ -1,0 +1,47 @@
+.text
+{
+    background-color: var(--scm-ui-bg-muted);
+    color: var(--scm-ui-fg-primary);
+    border: none;
+    border-bottom: 2px solid var(--scm-ui-fg-muted);
+    font-size: var(--scm-ui-font-size-sm);
+    font-weight: var(--scm-ui-font-weight-normal);
+    font-family: var(--scm-font-family), sans-serif;
+    padding: var(--scm-ui-spacing-3-5);
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: var(--scm-ui-border-sm);
+    resize: vertical;
+    min-height: 5dvh;
+    max-height: 80dvh;
+}
+.text.white
+{
+    background-color: var(--scm-ui-bg-background);
+}
+.text::placeholder
+{
+    color: var(--scm-ui-fg-placeholder);
+    font-family: var(--scm-font-family), sans-serif;
+}
+.text:disabled
+{
+    background-color: var(--scm-ui-primary-disabled);
+    color: var(--scm-ui-fg-placeholder);
+}
+.text.error
+{
+    color: var(--scm-ui-accent-red-muted);
+    border-color: var(--scm-ui-accent-red-muted);
+}
+
+/*** Tailles ***/
+.text.lg
+{
+    font-size: var(--scm-ui-font-size-base);
+}
+.text.sm
+{
+    font-size: var(--scm-ui-font-size-xs);
+}

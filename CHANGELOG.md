@@ -55,3 +55,7 @@
 ### SToggleButton
 
 - Correction du problème de sélection/désélection lorsqu'il n'y a aucun élément "all"
+
+### STextArea
+
+- Ajout du composant de TextArea

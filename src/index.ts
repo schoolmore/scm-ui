@@ -130,3 +130,5 @@ export { default as SSelectionDialog } from "./components/SSelectionDialog/SSele
 export type { ISSelectionDialog } from "./components/SSelectionDialog/SSelectionDialog";
 export type { ISSelectionDialogContext } from "./context/SSelectionDialog/SSelectionDialogContext";
 export { useOptionalSelectionDialog } from "./context/SSelectionDialog/SSelectionDialogContext";
+export { default as STextArea } from "./components/STextArea/STextArea";
+export type { ISTextArea } from "./components/STextArea/STextArea";
