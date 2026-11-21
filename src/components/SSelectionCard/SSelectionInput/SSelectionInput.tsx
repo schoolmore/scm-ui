@@ -29,10 +29,9 @@ export interface ISSelectionInput {
 }
 
 const SSelectionInput = ( {
-    name,values,multiple,onChange,defaultSelected,
+    name,values,multiple,onChange,defaultSelected = [],
 }: ISSelectionInput ) => {
 
-    if (defaultSelected === undefined) return;
     let lstSelected : ISSelectionInputValue[] = [];
     for (const id of defaultSelected) {
         const found = values.find(vl => vl.id === id);
