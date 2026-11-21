@@ -126,3 +126,7 @@ export { default as SSelectionCard } from "./components/SSelectionCard/SSelectio
 export type { ISSelectionCard } from "./components/SSelectionCard/SSelectionCard";
 export { default as SSelectionInput } from "./components/SSelectionCard/SSelectionInput/SSelectionInput";
 export type { ISSelectionInput, ISSelectionInputValue } from "./components/SSelectionCard/SSelectionInput/SSelectionInput";
+export { default as SSelectionDialog } from "./components/SSelectionDialog/SSelectionDialog";
+export type { ISSelectionDialog } from "./components/SSelectionDialog/SSelectionDialog";
+export type { ISSelectionDialogContext } from "./context/SSelectionDialog/SSelectionDialogContext";
+export { useOptionalSelectionDialog } from "./context/SSelectionDialog/SSelectionDialogContext";

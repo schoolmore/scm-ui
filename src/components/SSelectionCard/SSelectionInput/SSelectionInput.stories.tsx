@@ -115,3 +115,16 @@ export const Form : Story = {
 
     }
 }
+
+export const Disabled : Story = {
+    args: {
+        values:  [
+            {id: "6eA", label: "6eme A", color: "#3b53ff"},
+            {id: "6eB", label: "6eme B", color: "#3044d6"},
+            {id: "6eC", label: "6eme C", color: "#4c58aa", disabled: true},
+            {id: "5eA", label: "5eme A", color: "#e1005b"},
+            {id: "5eB", label: "5eme B", color: "#d25789", disabled: true},
+            {id: "5eC", label: "5eme C", color: "#9a2655", disabled: true},
+        ]
+    }
+}

@@ -13,10 +13,14 @@ export interface ISSelectionCard {
     value       : ISSelectionInputValue,
     /** Type solo ou multiple */
     type        : "checkbox" | "radio",
+    /** Vrai pour la carte qui reçoit le focus */
+    focusable?  : boolean,
+    /** Référence du parent */
+    ref?        : React.Ref<HTMLElement>,
 }
 
 const SSelectionCard = ( {
-    value,type,
+    value,type,ref,focusable=false,
 }: ISSelectionCard ) => {
 
     const [selected,setSelected] = useState<boolean>(false);
@@ -29,7 +33,9 @@ const SSelectionCard = ( {
     }
 
     const onKeyDown = (e : React.KeyboardEvent) : void => {
-        if (e.key === " ") triggeredSelected();
+        if (e.key !== " ") return;
+        e.preventDefault();
+        triggeredSelected();
     }
 
     useEffect(() => {
@@ -38,8 +44,8 @@ const SSelectionCard = ( {
     }, [values]);
 
     return (
-        <article onClick={triggeredSelected} tabIndex={value.disabled?-1:0} onKeyDown={onKeyDown}
-                    className={`${styles.card} ${selected?styles.selected:''}`}>
+        <article ref={ref} onClick={triggeredSelected} tabIndex={(focusable && !value.disabled)?0:-1} onKeyDown={onKeyDown}
+                    className={`${styles.card} ${selected?styles.selected:''} ${value.disabled?styles.disabled:''}`}>
             {type==="checkbox"&&(
                 <SCheckbox name="none" disabled={value.disabled} state={selected?"on":undefined}
                             onChange={triggeredSelected} disableFocus={true} />

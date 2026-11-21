@@ -45,30 +45,30 @@
     "@eslint/js": "^10.0.1",
     "@fontsource-variable/outfit": "^5.3.0",
     "@rolldown/plugin-babel": "^0.2.4",
-    "@storybook/addon-a11y": "^10.6.3",
-    "@storybook/addon-docs": "^10.6.3",
-    "@storybook/react-vite": "^10.6.3",
+    "@storybook/addon-a11y": "^10.6.8",
+    "@storybook/addon-docs": "^10.6.8",
+    "@storybook/react-vite": "^10.6.8",
     "@types/babel__core": "^7.20.5",
     "@types/node": "^24.19.2",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
-    "@vitejs/plugin-react": "^6.1.2",
+    "@vitejs/plugin-react": "^6.3.0",
     "addon-storybook-sync": "0.1.0",
     "babel-plugin-react-compiler": "^1.0.0",
     "eslint": "^10.13.0",
     "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.7",
-    "eslint-plugin-storybook": "^10.6.3",
-    "framer-motion": "^14.9.0",
+    "eslint-plugin-react-refresh": "^0.5.8",
+    "eslint-plugin-storybook": "^10.6.8",
+    "framer-motion": "^14.14.0",
     "globals": "^17.13.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
-    "storybook": "^10.6.5",
+    "storybook": "^10.6.8",
     "typescript": "^7.0.2",
-    "vite": "^8.3.4"
+    "vite": "^8.3.8"
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.20",
-    "material-symbols": "^0.48.1"
+    "material-symbols": "^0.49.0"
   }
 }

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { SForm } from "../../index.js";
+import { type ISSelectionInputValue, SForm } from "../../index.js";
 import { action } from "storybook/actions";
 import SInput from "../SInput/SInput.js";
 import { useCallback, useState } from "react";
@@ -21,6 +21,8 @@ import SDropDownTrigger from "../SDropDown/SDropDownTrigger/SDropDownTrigger.js"
 import SDropDownContent from "../SDropDown/SDropDownContent/SDropDownContent.js";
 import SDropDownItem from "../SDropDown/SDropDownItem/SDropDownItem.js";
 import SPastille from "../SPastille/SPastille.js";
+import SSelectionInput from "../SSelectionCard/SSelectionInput/SSelectionInput.js";
+import SSelectionDialog from "../SSelectionDialog/SSelectionDialog.js";
 
 
 const meta = {
@@ -56,6 +58,13 @@ const classes = [
     {id: "5eB", name: "5eme B", color: "#d25789"},
     {id: "5eC", name: "5eme C", color: "#9a2655"},
 ]
+
+const options : ISSelectionInputValue[] = [
+    {id: "mus", label:" Musique", color: "#874d10"},
+    {id: "art", label: "Arts complémentaires", color: "df10b7"},
+    {id: "eps", label: "Séances sportives", color: "#ffff50"},
+    {id: "nat", label: "Sciences et nature", color: "#78fba1"},
+];
 
 export const Form : Story = {
     args : {
@@ -109,6 +118,11 @@ export const Form : Story = {
                         ))}
                     </SDropDownContent>
                 </SDropDown>
+                <SSelectionDialog name="options_dialog" values={options} multiple={true} title={"Sélectionnez les options"}>
+                    <SField label={"Option(s) de l'élève"}>
+                        <SInput placeholder={"Sélectionnez les options de l'élève"} name="options" icon="stars" />
+                    </SField>
+                </SSelectionDialog>
                 <SButtonGroup>
                     <SButton variant={"secondary"} text={"Annuler"} />
                     <SButton variant={"primary"} text={"Valider"} formId={"t"} />

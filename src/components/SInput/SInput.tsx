@@ -8,6 +8,7 @@ import { useOptionalForm } from "../../context/SForm/SFormContext.js";
 import { type ISFieldContext, useOptionalField } from "../../context/SField/SFieldContext.js";
 import * as React from "react";
 import { useOptionalDropDown } from "../../context/SDropDown/SDropDownContext.js";
+import { useOptionalSelectionDialog } from "../../context/SSelectionDialog/SSelectionDialogContext.js";
 
 
 /** Taille disponible pour l'input */
@@ -64,7 +65,7 @@ const SInput = ( {
     const form = useOptionalForm();
     const inputRef = useRef<HTMLInputElement>(null);
     const dropdown = useOptionalDropDown();
-
+    const selectionDialog = useOptionalSelectionDialog();
 
     /** ID du label parent */
     const fieldCtx   : ISFieldContext | undefined  = useOptionalField();
@@ -91,6 +92,9 @@ const SInput = ( {
         if (!dropdown.isOpen) setError(validate?.(valueDropdown));
     }
 
+    /** Gestion du selection dialog */
+    const valueSelection : string | undefined = selectionDialog?.values.map(v => v.label).join(", ");
+
     return (
         <>
             <div className={`${styles.inputPrt} ${error&&styles.error} ${styles[size]} ${disabled?styles.disabled:''} ${background==="white"?styles.white:''}`}>
@@ -98,13 +102,13 @@ const SInput = ( {
                     <SMaterialSymbols icon={icon} size="lg" color="var(--scm-ui-fg-placeholder)" />
                 </div>
                 <input
-                    className={dropdown!==undefined?styles.dropdown:''}
+                    className={(dropdown!==undefined||selectionDialog!==undefined)?styles.dropdown:''}
                     name={name} ref={inputRef}
                     onChange={(e) => {
                         onChange?.(e.target.value);
                         if (error) setError(validate?.(e.target.value));
                     }}
-                    readOnly={dropdown!==undefined}
+                    readOnly={dropdown!==undefined||selectionDialog!==undefined}
                     onBlur={(e) => {
                         onBlur?.(e.target.value);
                         if (!dropdown) setError(validate?.(e.target.value));
@@ -119,11 +123,15 @@ const SInput = ( {
                     }}
                     aria-invalid={!!error}
                     id={idForm} defaultValue={defaultValue}
+                    aria-haspopup={dropdown!==undefined||selectionDialog!==undefined}
                     aria-describedby={idError} step={step} min={min} max={max}
                     aria-label={placeholder} disabled={disabled} maxLength={maxLength}
-                    placeholder={placeholder} type={type} value={valueDropdown||value}/>
+                    placeholder={placeholder} type={type} value={valueDropdown||valueSelection||value}/>
                 {dropdown?.value && (
                     <input type="hidden" aria-hidden={true} value={dropdown.value} name={`dropdown-${name}`}/>
+                )}
+                {selectionDialog!==undefined&&(
+                    <input type="hidden" aria-hidden={true} name={`selection-${name}`} value={selectionDialog?.values.map(v => v.id)} />
                 )}
             </div>
             {error&&<SInputErrorMessage idMsg={idError} message={error} />}

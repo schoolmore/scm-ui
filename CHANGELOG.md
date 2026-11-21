@@ -27,6 +27,11 @@
 - Champ de formulaire permettant de sélection un ou plusieurs éléments
 - Retourne la valeur si mis dans un `<SForm>`
 
+### SSelectionDialog
+
+- Dialogue permettant de mettre la valeur de la sélection dans un `<SInput>`
+- Utilisation du `<SSelectionInput>`
+
 ### SSelectionCard
 
 - Ajout du composant de carte de sélection
