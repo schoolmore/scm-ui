@@ -5,6 +5,7 @@ import { SSideBarContext } from "../../context/SSideBar/SSideBarContext.js";
 import type { ISideBarCreator, ISideBarOngletCreator } from "../SSideBar/SSideBar.js";
 import { SLoadingDialogContext } from "../../context/SLoadingDialog/SLoadingDialogContext.js";
 import SToaster from "../SToaster/SToaster.js";
+import SConfirmer from "../SConfirmer/SConfirmer.js";
 
 export interface ISScmApp {
     /** Contenu de l'application (SSideBar et SMainApp) */
@@ -69,6 +70,7 @@ const SScmApp = ( {
                 setDescription: setDescrLoading, setTitle: setTitleLoading
             }}>
                 <SToaster />
+                <SConfirmer />
                 <div className={styles.app}>
                     {children}
                 </div>

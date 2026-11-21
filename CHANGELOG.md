@@ -1,5 +1,5 @@
 # Scm-ui 0.0.8
-## Nouvelle version mineure
+## Nouvelle version
 
 ---
 
@@ -36,6 +36,10 @@
 - Dialogue permettant de mettre la valeur de la sélection dans un `<SInput>`
 - Utilisation du `<SSelectionInput>`
 
+### SInput
+
+- Prise en charge du dialogue de sélection
+
 ### SSelectionCard
 
 - Ajout du composant de carte de sélection
@@ -59,3 +63,14 @@
 ### STextArea
 
 - Ajout du composant de TextArea
+
+### SDialog
+
+- Correction : Ajout du prop `close` pour afficher les boutons de fermeture
+- Ajout d'un style sur le titre pour les dialogues non fermable
+
+### SConfirmDialog
+
+- Ajout du composant SConfirmDialog pour demander une confirmation à l'utilisateur
+- Peut-être appeler depuis un script extérieur à React avec `confirmation()` *(comme les toast)* via un `await`
+- Le composant `<SConfirmer />`, inclus dans `SScmApp`, affiche les confirmations demandées par `confirmation()`

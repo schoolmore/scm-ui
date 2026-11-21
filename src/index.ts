@@ -132,3 +132,8 @@ export type { ISSelectionDialogContext } from "./context/SSelectionDialog/SSelec
 export { useOptionalSelectionDialog } from "./context/SSelectionDialog/SSelectionDialogContext";
 export { default as STextArea } from "./components/STextArea/STextArea";
 export type { ISTextArea } from "./components/STextArea/STextArea";
+export { default as SConfirmDialog } from "./components/SConfirmDialog/SConfirmDialog";
+export type { ISConfirmDialog } from "./components/SConfirmDialog/SConfirmDialog";
+export { default as SConfirmer } from "./components/SConfirmer/SConfirmer";
+export { confirmStore, confirmation } from "./context/SConfirmDialog/confirmStore";
+export type { IConfirmation, IConfirmEntry } from "./context/SConfirmDialog/confirmStore";

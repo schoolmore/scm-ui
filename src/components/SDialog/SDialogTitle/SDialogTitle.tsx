@@ -27,7 +27,7 @@ const SDialogTitle = ( {
     }
 
     return (
-        <header {...handleProps} className={`${styles.title} ${isMovable?styles.movable:''}`}>
+        <header {...handleProps} className={`${styles.title} ${isMovable?styles.movable:''} ${!close?styles.unclose:''}`}>
             <p>{title}</p>
             {!isMobile && close&&(
                 <div tabIndex={0} onKeyDown={onKeyDown}

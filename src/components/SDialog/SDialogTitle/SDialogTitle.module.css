@@ -32,6 +32,10 @@
     user-select: none;
     -webkit-user-select: none;
 }
+.unclose p
+{
+    font-weight: var(--scm-ui-font-weight-bold);
+}
 
 @media screen and (max-width: 500px) {
     .movable {

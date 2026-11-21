@@ -15,10 +15,12 @@ export interface ISDialogContent {
     title       : string,
     /** Indique si le dialogue doit être movable, non par défaut */
     isMovable?  : boolean,
+    /** Afficher le bouton de fermeture */
+    close?      : boolean,
 }
 
 const SDialogContent = ( {
-    children,title,isMovable=false,
+    children,title,isMovable=false,close=true,
 }: ISDialogContent ) => {
 
     const { offset, handleProps } = useDraggable({enabled : isMovable});
@@ -44,7 +46,7 @@ const SDialogContent = ( {
                                     if (info.offset.y > 100 || info.velocity.y > 500) toggle(false);
                                 }}>
                         <SDialogHandle onPointerDown={(e) => dragsControls.start(e)} />
-                        <SDialogTitle onClick={() => toggle(false)} handleProps={handleProps} title={title} />
+                        <SDialogTitle close={close} onClick={() => toggle(false)} handleProps={handleProps} title={title} />
                         {children}
                     </motion.div>
                 </motion.div>
@@ -59,7 +61,7 @@ const SDialogContent = ( {
                             animate={{opacity: 1,y: 0}} initial={{opacity: 0.5,y: "1.5dvh"}}
                             exit={{opacity: 0, y: "2dvh"}}
                             className={styles.dialog}>
-                            <SDialogTitle onClick={() => toggle(false)} handleProps={handleProps} isMovable={isMovable} title={title} />
+                            <SDialogTitle close={close} onClick={() => toggle(false)} handleProps={handleProps} isMovable={isMovable} title={title} />
                             {children}
                         </motion.div>
                     </div>
