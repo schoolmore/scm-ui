@@ -1,13 +1,14 @@
 .cbParent
 {
     display: flex;
-    align-items: center;
+    align-items: start;
     cursor: pointer;
 }
 .cbParent .checkbox
 {
     width: 1.5em;
     height: 1.5em;
+    flex-shrink: 0;
     border-radius: var(--scm-ui-border-md);
     background-color: var(--scm-ui-bg-muted);
     display: flex;

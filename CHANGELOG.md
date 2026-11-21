@@ -3,6 +3,10 @@
 
 ---
 
+### SAvatar
+
+- Correction de la taille afin d'éviter les déformations
+
 ### SLoadingDialog
 
 - Adaptation du dialogue pour l'affichage mobile
