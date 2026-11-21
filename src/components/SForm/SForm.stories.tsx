@@ -21,7 +21,6 @@ import SDropDownTrigger from "../SDropDown/SDropDownTrigger/SDropDownTrigger.js"
 import SDropDownContent from "../SDropDown/SDropDownContent/SDropDownContent.js";
 import SDropDownItem from "../SDropDown/SDropDownItem/SDropDownItem.js";
 import SPastille from "../SPastille/SPastille.js";
-import SSelectionInput from "../SSelectionCard/SSelectionInput/SSelectionInput.js";
 import SSelectionDialog from "../SSelectionDialog/SSelectionDialog.js";
 
 
